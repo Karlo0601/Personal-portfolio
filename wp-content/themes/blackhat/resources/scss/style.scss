@@ -1,0 +1,86 @@
+/*!
+Theme Name: Blackhat Theme
+Theme URI:
+Author: Blackhat Studio
+Author URI: http://karlo-stekovic.from.hr
+Description: Blackhat Admin Starter Theme.
+Version: 2.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+!*/
+
+/* Variables & Mixins */
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
+/* Reset */
+@import 'vendor/normalize';
+
+/* Base */
+@import 'base/font';
+@import "base/base";
+
+/* Layout */
+@import "layout/blackhat_grid";
+@import "layout/content";
+@import "layout/footer";
+@import "layout/globals";
+@import "layout/header";
+@import "layout/layout";
+@import "layout/sidebar";
+@import "layout/wp-default";
+
+/* Components */
+//@import "components/accordions";
+//@import "components/articles-horizontal";
+//@import "components/articles-vertical";
+//@import "components/badges";
+@import "components/about";
+@import "components/block-wrapper";
+@import "components/breadcrumbs";
+@import "components/buttons";
+@import "components/calendar";
+@import "components/cta";
+//@import "components/files";
+@import "components/forms";
+//@import "components/form-block";
+@import "components/hero-image";
+//@import "components/gallery-slider";
+//@import "components/gallery-thumbs";
+//@import "components/image";
+@import "components/instagram-feed";
+@import "components/logo";
+//@import "components/maps";
+@import "components/main-menu";
+//@import "components/mobile-header";
+@import "components/modals";
+//@import "components/notifications";
+//@import "components/pagination";
+@import "components/projects-listing";
+@import "components/skills";
+@import "components/slider";
+@import "components/social";
+//@import "components/statuses";
+@import "components/svg-icons";
+//@import "components/tables";
+//@import "components/tabs";
+@import "components/testimonials";
+//@import "components/video";
+//@import "components/widgets";
+@import "components/wysiwyg";
+
+/* Helpers */
+@import "helpers/animations";
+@import "helpers/effects";
+@import "helpers/helpers";
+
+/* Pages */
+/*@import "pages/contact";*/
+@import "pages/landing";
+
+/* Vendor */
+@import 'vendor/slickslider';
+@import 'vendor/fancybox';
+@import 'vendor/responsive-tables';
+@import 'vendor/elegant-icons';
+@import 'vendor/toasts';

@@ -1,0 +1,9 @@
+<article class="single-post {{ post.post_class }}">
+    <figure class="single-post__image">
+        <img src="{{ post.post_image.url }}" width="{{ post.post_image.width }}" height="{{ post.post_image.height }}" alt="{{ post.post_image.alt }}">
+    </figure>
+    <span  class="single-post__date">{{ post.post_date }}</span>
+    <h3  class="single-post__title">{{ post.post_title }}</h3>
+    <div class="single-post__excerpt">{{ post.post_excerpt }}</div>
+    <a href="{{ post.post_permalink }}"  class="single-post__permalink">{{ labels.label_read_more }}</a>
+</article>

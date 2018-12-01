@@ -1,0 +1,179 @@
+.footer {
+	width: 100%;
+	padding: $grid_margin 0px;
+
+	&--site {
+		color: #ffffff;
+		background: #151515;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		z-index: -1002;
+	}
+	&__logo-container {
+		line-height: 24px;
+
+		@include breakpoint($breakpoint_laptop){
+	
+		}
+		@include breakpoint($breakpoint_desktop){
+		
+		}
+		@include breakpoint($breakpoint_tablet){
+		
+		}
+		@include breakpoint($breakpoint_mobile){
+			width: 100%;
+			text-align: center;
+			margin-bottom: 15px;
+		}
+		@include breakpoint($breakpoint_small){
+			width: 100%;
+			text-align: center;
+			margin-bottom: 15px;
+		}
+	}
+	&__logo {
+		max-width: 200px;
+		width: 100%;
+		height: auto;
+		display: inline-block;
+		margin-right: 0;
+		vertical-align: middle;
+	}
+}
+
+.copyright {
+	display: inline-block;
+	text-align: center;
+
+	@include breakpoint($breakpoint_laptop){
+	
+	}
+	@include breakpoint($breakpoint_desktop){
+	
+	}
+	@include breakpoint($breakpoint_tablet){
+	
+	}
+	@include breakpoint($breakpoint_mobile){
+		width: 100%;
+		text-align: center;
+	}
+	@include breakpoint($breakpoint_small){
+		width: 100%;
+		text-align: center;
+	}
+
+	p {
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 24px;
+		text-align: right;
+
+		@include breakpoint($breakpoint_laptop){
+	
+		}
+		@include breakpoint($breakpoint_desktop){
+		
+		}
+		@include breakpoint($breakpoint_tablet){
+		
+		}
+		@include breakpoint($breakpoint_mobile){
+			text-align: center; 
+			font-size: 12px;
+		}
+		@include breakpoint($breakpoint_small){
+			text-align: center;
+			font-size: 12px;
+		}
+
+		span {
+			color: $color_brand;
+		}
+	}
+}
+
+.scroll-to-top {
+    height: 60px;
+    width: 60px;
+    background: $color_brand;
+	display: none;
+	text-align: center;
+	position: fixed;
+    bottom: 100px;
+	right: 5%;
+	z-index: 999;
+
+	@include breakpoint($breakpoint_laptop){
+	
+	}
+	@include breakpoint($breakpoint_desktop){
+	
+	}
+	@include breakpoint($breakpoint_tablet){
+		right: 60px;
+	}
+	@include breakpoint($breakpoint_mobile){
+		right: 16px;
+		bottom: 125px;
+		height: 40px;
+    	width: 40px;
+	}
+	@include breakpoint($breakpoint_small){
+		right: 16px;
+		bottom: 125px;
+		height: 40px;
+    	width: 40px;
+	}
+	
+	&:hover {
+		svg {
+			fill: $color_body_text;
+			transition: $transition;
+	
+			use {
+				fill: $color_body_text;
+				transition: $transition;
+			}
+		}
+	}
+
+	svg {
+		fill: $color_button_text;
+		width: 20px;
+		height: 60px;
+		stroke-width: 1px;
+		stroke: $color_brand;
+		transition: $transition;
+
+		@include breakpoint($breakpoint_laptop){
+		
+		}
+		@include breakpoint($breakpoint_desktop){
+		
+		}
+		@include breakpoint($breakpoint_tablet){
+		
+		}
+		@include breakpoint($breakpoint_mobile){
+			width: 15px;
+			height: 40px;
+		
+		}
+		@include breakpoint($breakpoint_small){
+			width: 15px;
+			height: 40px;
+		
+		}
+
+		use {
+			fill: $color_button_text;
+			width: 20px;
+			height: auto;
+			transition: $transition;
+		}
+	}
+
+}

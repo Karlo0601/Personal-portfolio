@@ -1,0 +1,16 @@
+<div class="blackhat-video blackhat-video--{{ type }} clearfix">
+    <video 
+    	webkit-playsinline="" 
+    	muted="" 
+    	loop=""
+    	{% if poster %}
+    	poster="{{ poster }}"
+    	{% endif %} 
+    	autoplay="autoplay">
+
+    	{% for video in files %}
+			<source type="{{ video.mime_type }}" src="{{ video.file }}"></source>
+		{% endfor %}
+
+	</video>
+</div>

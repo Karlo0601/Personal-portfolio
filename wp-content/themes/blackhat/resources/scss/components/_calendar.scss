@@ -1,0 +1,310 @@
+/* #calendar {
+    position: relative;
+}
+.today {
+    background: $color_brand;
+}
+.calendar {
+    display: block;
+    max-width: 100%;
+    table-layout: fixed;
+    width: 100%;
+
+    &__head-title {
+        display: none;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        font-weight: 300;
+        margin-bottom: 10px;
+        text-transform: capitalize;
+
+        @include breakpoint($breakpoint_small){
+            display: block;
+        }
+    }
+    &__row {
+        &:nth-child(odd) {
+            background-color: $color_gray;
+        }
+        &:nth-child(even){
+            background-color: $color_body_background;
+        }
+    }
+    &__head-date {
+        display: inline-block;
+        flex-grow: 1;
+        padding: 0;
+        margin-right: 25px;
+
+        @include breakpoint($breakpoint_small){
+            display: none;
+
+            &:first-child {
+                display: block;
+                margin-right: 10px;
+            }
+            &:last-child {
+                display: block;
+                margin-right: 0px;
+            }
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: 400;
+            margin: 0;
+            text-align: left;
+        }
+        .button--arrow {
+            background-color: $color_body_background;
+            border-radius: 3px;
+            border: 1px solid $text_color_primary;
+            flex-grow: 0;
+            height: 35px;
+            line-height: 17px;
+            padding: 10px;
+            width: 35px;
+
+            svg {
+                fill: $text_color_primary;
+                height: 12px;
+                width: 12px;
+
+                use {
+                    fill: $text_color_primary;
+                }
+            }
+        }
+    }
+    &__day {
+        display: inline-table;
+        flex-grow: 1;
+        font-size: 13px;
+        padding: 10px 15px;
+        text-align: center;
+        position: relative;
+        
+
+        @include breakpoint($breakpoint_small){
+            border-bottom: none;
+            display: inline-block;
+            height: auto !important;
+            //margin-right: 15px;
+            padding: 10px;
+            text-align: center;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &:before {
+                content: attr(data-th);
+                display: block;
+                text-align: center;
+                margin-bottom: 5px;
+            }
+        }
+    }
+    &__day-np {
+        display: inline-table;
+        flex-grow: 1;
+        background-color: $color_dark;
+        font-size: 13px;
+        padding: 10px 15px;
+        text-align: center;
+        position: relative;
+        
+
+        @include breakpoint($breakpoint_small){
+            border-bottom: none;
+            display: inline-block;
+            height: auto !important;
+            //margin-right: 15px;
+            padding: 10px;
+            text-align: center;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &:before {
+                content: attr(data-th);
+                display: block;
+                text-align: center;
+                margin-bottom: 5px;
+            }
+        }
+    }
+    thead {
+        display: block;
+        font-size: 14px;
+        width: 100%;
+
+        tr {
+            align-items: center;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            padding: 25px;
+            width: 100%;
+
+            @include breakpoint($breakpoint_small){
+                padding: 0 25px 25px 25px;
+            }
+            
+        }
+    }
+    &__head-date {
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 1.6;
+    }
+    tbody {
+        display: block;
+        max-height: 500px;
+        overflow-y: scroll;
+
+        @include breakpoint($breakpoint_big_laptop){
+            max-height: 450px;
+        }
+        @include breakpoint($breakpoint_laptop){
+            max-height: 450px;
+        }
+        @include breakpoint($breakpoint_desktop){
+            max-height: 430px;
+        }
+        @include breakpoint($breakpoint_tablet){
+        
+        }
+        @include breakpoint($breakpoint_mobile){
+        
+        }
+        @include breakpoint($breakpoint_small){
+            max-height: 310px;
+        }
+
+        tr {
+            align-items: center;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            padding: 0 25px 15px;
+            width: 100%;
+
+
+            @include breakpoint($breakpoint_tablet){
+                padding: 0 15px 15px;
+
+            }
+            @include breakpoint($breakpoint_mobile){
+            
+            }
+            @include breakpoint($breakpoint_small){
+                max-width: 100%;
+                overflow-x: auto;
+                white-space: nowrap;
+                display: block;
+                border-bottom: 1px solid #efefef;
+            }
+            &:first-child {
+                padding-top: 25px;
+            }
+            &:last-child {
+                border-bottom: 0;
+            }
+            td {
+                
+            }
+        }
+    }
+    &__timepick-label {
+        background-color: $color_body_background;
+        border-radius: 3px;
+        border: 1px solid #98a9c1;
+        box-shadow: none;
+        max-width: 90px;
+        width: 100%;
+        padding: 8px 14px;
+        transition: $transition;
+
+        @include breakpoint($breakpoint_tablet){
+            max-width: 80px;
+        }
+        @include breakpoint($breakpoint_mobile){
+        
+        }
+        @include breakpoint($breakpoint_small){
+        
+        }
+
+        &:hover {
+            background-color: $color_primary;
+            border: 1px solid $color_primary;
+            color: $color_button_text;
+            transition: $transition;
+
+            @include breakpoint($breakpoint_laptop){
+            
+            }
+            @include breakpoint($breakpoint_desktop){
+            
+            }
+            @include breakpoint($breakpoint_tablet){
+                background-color: $color_body_background;
+                color: #333333;
+                border: 1px solid #98a9c1;
+            }
+            @include breakpoint($breakpoint_mobile){
+                background-color: $color_body_background;
+                color: #333333;
+                border: 1px solid #98a9c1;
+            }
+            @include breakpoint($breakpoint_small){
+                background-color: $color_body_background;
+                color: #333333;
+                border: 1px solid #98a9c1;
+            }
+        }
+        &.button--active {
+            background-color: $color_primary;
+            border: 1px solid $color_primary;
+            color: $color_button_text;
+            transition: $transition;
+        }
+    }
+    &__timepick-checkbox{
+        visibility: hidden;
+        display: none;
+    }
+    &__timepick-checkbox:checked + label {
+        background-color: $color_primary;
+        border: 1px solid $color_primary;
+        color: $color_button_text;
+        transition: $transition;
+        margin: 0;
+    }
+    &__timepick-checkbox + label {
+        margin: 0;
+    }
+    input[type="checkbox"] + label {
+        margin-left: 0px;
+        font-size: 13px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+
+        @include breakpoint($breakpoint_tablet){
+            font-size: 11px;
+        }
+        @include breakpoint($breakpoint_mobile){
+        
+        }
+        @include breakpoint($breakpoint_small){
+        
+        }
+    }
+    input[type="checkbox"] + label:before, input[type="checkbox"] + label:after {
+        display: none;
+    }
+} */

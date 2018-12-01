@@ -1,0 +1,62 @@
+/**
+* Variables used in this file from abstracts/_variable.scss
+*
+$color_primary
+$transition
+*
+*/
+/**
+* Specific variables (used only in this file)
+*
+* None
+*
+**/
+.blackhat-file {        
+	margin-bottom: 20px;
+	padding: 20px;
+	border-left: 4px solid transparent;
+	box-shadow: rgba(0,0,0,.2) 0px 0px 1px;
+	transition: $transition;
+	
+	&:hover {
+		border-left: 4px solid $color_primary;
+		
+		.blackhat-file__icon {
+			width: 16px;
+			height: 16px;
+			margin-right: 4px;
+		}
+	}
+	
+	&__name {
+		margin-bottom: 10px;
+		font-size: 24px;
+		color: $color_primary; 
+	}
+	
+	&__description {
+		width: 100%;
+		
+		p {
+			font-size: 16px;
+			line-height: 24px;
+			margin-bottom: 10px;
+		}
+	}
+	
+	&__link {
+		font-size: 14px;
+		font-weight: 300;
+		
+		span {
+			color: darken( $color_primary, 10% );
+		}
+	}
+
+	&__icon {
+		width: 0px;
+		height: 16px;
+		fill: darken( $color_primary, 10% );
+		transition: $transition;
+	}
+}

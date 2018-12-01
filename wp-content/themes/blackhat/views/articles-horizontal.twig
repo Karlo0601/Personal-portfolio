@@ -1,0 +1,41 @@
+<div class="blackhat-articles blackhat-articles--{{ template_version }} clearfix">
+    {% for article in articles %}
+        <article class="blackhat-articles__article {{ column_class }} clearfix">
+            {% if article.image_html %}
+                <figure class="article__image col-13">
+
+                    {% if article.link %}
+                        <a href="{{ article.link }}">
+                    {% endif %}
+
+                        {{ article.image_html }}
+
+                    {% if article.link %}
+                        </a>
+                    {% endif %}
+
+                </figure>
+            {% endif %}
+            <div class="article__description col-23 no-margin">
+
+                {% if article.link %}
+                    <a href="{{ article.link }}" class="article__link">
+                {% endif %}
+
+                {% if article.title %}
+                    <h4 class="article__title">{{ article.title }}</h4>
+                {% endif %}
+
+                {% if article.link %}
+                    </a>
+                {% endif %}
+
+                {% if article.excerpt %}
+                    <p class="article__content">
+                        {{ article.excerpt }}
+                    </p>
+                {% endif %}
+            </div>
+        </article>
+    {% endfor %}
+</div>

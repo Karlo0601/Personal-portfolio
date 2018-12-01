@@ -1,0 +1,67 @@
+/*** Testimonials ***/
+
+.blackhat-testimonials {
+
+	@include element('testimonial') {
+
+	}
+
+}
+
+.testimonial {
+
+	@include element('image') {
+		width: 18%;
+		margin: 0 2% 0 0;
+		border-radius: 100%;
+
+	}
+
+	@include element('description') {
+		width: 77%;
+
+	}
+
+	@include element('name') {
+		margin: 0;
+		padding: 0;
+
+	}
+
+	@include element('title') {
+		padding: 0;
+		margin: 0;
+		font-size: 16px;
+
+	}
+
+	@include element('blockqoute') {
+		position: relative;
+		display:block;
+		padding: 15px 20px 15px 45px;
+		margin: 0 0 20px;
+		text-align: justify;
+		background: #fff;
+
+		&:before {
+			content: "\201C";
+			font-weight: bold;
+			position: absolute;
+			left: 10px;
+			top: 25px;
+			font-size: 55px;
+
+		}
+
+		&:after {
+			content: "";
+		}
+
+
+	}
+
+	@include element('title') {
+
+	}
+
+}

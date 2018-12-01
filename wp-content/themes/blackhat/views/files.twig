@@ -1,0 +1,18 @@
+<div class="blackhat-files clearfix">
+    {% for file in files %}
+        <article class="blackhat-file col-12">
+            {% if file.type != 'NA' %}
+                <h3 class="blackhat-file__name">{{ file.name }}</h3>
+                <div class="blackhat-file__description">{{ file.description }}</div>
+                <a href="{{ file.url }}" class="blackhat-file__link">
+                    <svg class="svg-arrow--down blackhat-file__icon">
+                        <use xlink:href="{{ function('get_stylesheet_directory_uri') }}/assets/images/sprite.svg#icon--download"></use>
+                    </svg> 
+                    {{ download_label }} <span>({{ file.size }})</span>
+                </a>
+            {% else %}
+                <a href="#" class="blackhat-file__link" target="_blank">NA</a>
+            {% endif %}
+        </article>
+    {% endfor %}
+</div>

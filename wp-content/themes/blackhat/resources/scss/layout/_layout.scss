@@ -1,0 +1,104 @@
+/*** Layout ***/
+
+.layout {
+	position: relative;
+	width: 100%;
+	padding: $grid_margin 0px;
+	background-size: cover;
+	background-position: center;
+	overflow: hidden;
+	background-color: $color_body_background;
+
+	&--light-gray {
+		background-color: $color_light_gray;
+	}
+	&--narrow{
+		.wrapper {
+			max-width: $grid_content_narrow;
+		}
+	} 
+	&--full-width{
+		.wrapper {
+			max-width: 100%;
+		}
+	} 
+	&--wide{
+		.wrapper {
+			max-width: $grid_content;
+		}
+	} 
+	&-padding {
+
+		&--none {
+			padding: 0;
+		}
+		&--standard {
+			padding: $grid_margin 0;
+		}
+		&--large {
+			padding: $grid_margin * 2 0;
+
+			@include breakpoint($breakpoint_laptop){
+			
+			}
+			@include breakpoint($breakpoint_desktop){
+			
+			}
+			@include breakpoint($breakpoint_tablet){
+				padding: 45px 0;
+			}
+			@include breakpoint($breakpoint_mobile){
+				padding: 45px 0;
+			}
+			@include breakpoint($breakpoint_small){
+				padding: 45px 0;
+			}
+		}
+		&--extra-large {
+			padding: $grid_margin * 3 0  $grid_margin * 3 + 10px;
+
+			@include breakpoint($breakpoint_laptop){
+			
+			}
+			@include breakpoint($breakpoint_desktop){
+			
+			}
+			@include breakpoint($breakpoint_tablet){
+				padding: $grid_margin + 10px 0;
+			}
+			@include breakpoint($breakpoint_mobile){
+				padding: $grid_margin + 10px 0;
+			}
+			@include breakpoint($breakpoint_small){
+				padding: $grid_margin + 10px 0;
+			}
+		}
+		&--bottom-none {
+			padding-bottom: 0;
+		}
+		&--top-none {
+			padding-top: 0; 
+		}
+	}
+
+	&--skills, &--hero-image, &--cta {
+		position: relative;
+		background-color: transparent;
+	}
+	&--instagram-feed {
+		background-color: #f3f3f3;
+	}
+}
+
+.wrapper { 
+    width: 100%; 
+    max-width: $outer_width; 
+    margin: 0 auto; 
+}
+
+.layout--narrow .wrapper {
+	max-width: $grid_content_narrow;
+}
+.layout--full-width .wrapper {
+	max-width: 100%;
+}

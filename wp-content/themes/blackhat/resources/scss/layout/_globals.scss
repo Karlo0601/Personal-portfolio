@@ -1,0 +1,80 @@
+.global {
+
+    &__top-title {
+        border-right: 1px solid $color_brand;
+        display: inline-block;
+        font-family: $font_family;
+        font-weight: 300;
+        line-height: 1.4;
+        margin-bottom: 0px;
+        padding-right: 15px;
+        position: relative;
+        width: auto;
+        z-index: 99;
+
+        @include breakpoint($breakpoint_laptop){
+        
+        }
+        @include breakpoint($breakpoint_desktop){
+            font-size: 20px;
+        }
+        @include breakpoint($breakpoint_tablet){
+            font-size: 20px;
+        }
+        @include breakpoint($breakpoint_mobile){
+        
+        }
+        @include breakpoint($breakpoint_small){
+        
+        }
+    }
+    &__title {
+        font-size: 48px;
+        font-weight: 500;
+        margin-bottom: $grid_margin + 20px;
+        padding-bottom: 30px;
+        padding-left: 25px;
+        position: relative;
+        text-transform: uppercase;
+        z-index: 99;
+        display: inline-block;
+            
+            &:after {
+                background-color: $color_brand;
+                bottom: 0;
+                content: '';
+                display: block;
+                height: 1px;
+                left: 20px;
+                position: absolute;
+                width: 110%;
+            }
+        
+            @include breakpoint($breakpoint_laptop){
+            
+            }
+            @include breakpoint($breakpoint_desktop){
+                font-size: 40px;
+            }
+            @include breakpoint($breakpoint_tablet){
+                font-size: 38px;
+            }
+            @include breakpoint($breakpoint_mobile){
+            
+            }
+            @include breakpoint($breakpoint_small){
+
+            }
+    }
+    &__overlay {
+        background-color: rgba(0,0,0,0.5);
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+        z-index: 1;
+    }
+}

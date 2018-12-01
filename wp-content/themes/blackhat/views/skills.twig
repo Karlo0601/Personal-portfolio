@@ -1,0 +1,21 @@
+<section id="skills" class="layout layout--wide layout--skills layout-padding--extra-large" data-parallax="scroll" {% if skills_background_image %}data-image-src="{{ skills_background_image.url }}"{% endif %}>
+    {% if skills_background_image %}<div class="global__overlay"></div>{% endif %}
+    <div class="wrapper">
+        <div class="container">
+            <div class="skills__content">
+                {% if skills_top_title and skills_title %}
+                    <h4 class="global__top-title invisible" data-appear-effect="slideInLeft" data-appear-delay="150">{{ skills_top_title }}</h4><br>
+                    <h3 class="global__title invisible" data-appear-effect="slideInLeft" data-appear-delay="190">{{ skills_title }}</h3>
+                {% endif %}
+                <div class="skills__container fadeIn fadeIn--bottom clearfix invisible" data-appear-effect="slideInLeft" data-appear-delay="250">
+                    {% for key,skill in skills %}
+                        <div class="skills__single-item col-16 {% if loop.last %}col-last{% endif %}">
+                            <span class="skills__single-item--counter" data-count="{{ skill.skill_level }}">0</span>
+                            <h5 class="skills__single-item--title">{{ skill.skill_name }}</h5>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

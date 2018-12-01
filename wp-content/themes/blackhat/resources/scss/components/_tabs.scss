@@ -1,0 +1,84 @@
+/**
+* Variables used in this file from abstracts/_variable.scss
+*
+$component_margin
+$color_primary
+$color_gray
+*
+*/
+/**
+* Specific variables (used only in this file) 
+*
+* None
+*
+**/
+
+// Tabs
+.blackhat-tabs {
+	//margin-bottom: $component_margin;
+
+	&:last-child {
+		margin-bottom: 0px;
+	}
+
+	&__titles {
+		@extend .clearfix;
+
+		text-decoration: none;
+		list-style-type: none;
+		margin: 0px;
+		padding: 0px;
+	}
+
+	&__title  {
+		float: left;
+		cursor: pointer;
+		border-right: 1px solid transparent;
+		transition: $transition;
+
+		&--current {
+			.blackhat-tabs__link {
+				background: lighten( $color_gray, 5% );
+				border-bottom: 2px solid $color_primary;
+			}
+		}
+	}
+
+	&__link {
+		padding: 10px 20px;
+		display: inline-block;
+		background: $color_gray;
+		border-bottom: 2px solid transparent;
+		transition: $transition;
+
+		&:hover {
+			background: lighten( $color_gray, 5% );
+			border-bottom: 2px solid $color_primary;
+		}
+
+		&[disabled] {
+			cursor: not-allowed;
+			background: lighten($color_gray, 30%);
+
+			&:hover {
+				background: inherit;	
+				border-bottom: 2px solid transparent;
+			}
+		}
+	}
+
+	&__panels {
+		width: 100%;
+	}
+
+	&__panel {
+		display: none;
+		padding: 10px;
+		transition: $transition;
+	}
+
+}
+
+.blackhat-tabs__panel--current {
+	display: block;
+}

@@ -1,0 +1,54 @@
+<section id="contact" class="layout layout--wide layout--contact layout-padding--extra-large" data-parallax="scroll" {% if contact_background_image %}data-image-src="{{ contact_background_image.url }}"{% endif %}>
+    {% if contact_background_image %}<div class="global__overlay"></div>{% endif %}
+    <div class="wrapper">
+        <div class="container">
+            <div class="contact__content">
+                {% if contact_top_title and contact_title %}
+                    <h4 class="global__top-title invisible" data-appear-effect="slideInLeft" data-appear-delay="150">{{ contact_top_title }}</h4><br>
+                    <h3 class="global__title invisible" data-appear-effect="slideInLeft" data-appear-delay="190">{{ contact_title }}</h3>
+                {% endif %}
+                <div class="contact__contact-me clearfix invisible" data-appear-effect="slideInLeft" data-appear-delay="250">
+                    <form method="post" action="" id="contact-form" class="contact-form" enctype="multipart/form-data">
+                        <input type="hidden" name="action" value="send_form">
+                        <div class="form-group col-12">
+                            <input id="full-name" type="text" name="full-name" required="" placeholder="{{ labels.label_full_name }}" >
+                            <span></span>
+                        </div>
+                        <div class="form-group col-12 col-last">
+                            <input id="email" type="email" name="email" required="" placeholder="{{ labels.label_email }}"> 
+                            <span></span>
+                        </div> 
+                        <div class="form-group col-12">
+                            <input id="phone" type="text" name="phone" placeholder="{{ labels.label_phone }}"> 
+                            <span></span>
+                        </div>
+                        <div class="form-group col-12 col-last">
+                            <input id="subject" type="text" name="subject" placeholder="{{ labels.label_subject }}">
+                            <span></span>
+                        </div>
+                        <div class="form-group col-1">
+                            <textarea name="message" placeholder="{{ labels.label_message }}"></textarea>
+                            <span></span>
+                        </div>	 
+                        <button type="submit" form="contact-form" class="button button--brand">{{ labels.label_button_contact }}</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    $(document).ready(function(){
+
+        var argsAjax = {
+            "requiredFields": [
+                'full-name',
+                'phone-number',
+                'email',
+            ],
+            "formId": 'contact-form',
+            "errorResponse": '{{ labels.label_error }}',
+		};
+        blackhat.main.contactAjax(argsAjax);
+    });
+</script>

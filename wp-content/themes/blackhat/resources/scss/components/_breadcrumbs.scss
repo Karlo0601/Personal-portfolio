@@ -1,0 +1,17 @@
+.breadcrumbs {
+    padding: 0;
+    margin-bottom: $component_margin;
+
+    &__item {
+        display: inline-block;
+        color: $color_primary;
+
+
+        &-icon {
+            margin:0 10px;
+            width: 12px;
+            height: 12px;
+            fill: $color_primary;
+        }
+    }
+}

@@ -1,0 +1,92 @@
+.cta {
+
+    &__content {
+        align-items: center;
+        display: flex;
+        height: 100%;
+        justify-content: flex-start;
+        position: relative;
+        z-index: 9;
+
+        @include breakpoint($breakpoint_laptop){
+        
+        }
+        @include breakpoint($breakpoint_desktop){
+        
+        }
+        @include breakpoint($breakpoint_tablet){
+        
+        }
+        @include breakpoint($breakpoint_mobile){
+            flex-flow: column;
+            align-items: center;
+        }
+        @include breakpoint($breakpoint_small){
+            flex-flow: column;
+            align-items: center;
+        }
+    }
+    &__left-half {
+        text-align: left;
+
+        @include breakpoint($breakpoint_laptop){
+        
+        }
+        @include breakpoint($breakpoint_desktop){
+        
+        }
+        @include breakpoint($breakpoint_tablet){
+        
+        }
+        @include breakpoint($breakpoint_mobile){
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 15px;
+        }
+        @include breakpoint($breakpoint_small){
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 15px;
+        }
+    }
+    &__right-half {
+        text-align: right;
+
+        @include breakpoint($breakpoint_laptop){
+        
+        }
+        @include breakpoint($breakpoint_desktop){
+        
+        }
+        @include breakpoint($breakpoint_tablet){
+        
+        }
+        @include breakpoint($breakpoint_mobile){
+            width: 100%;
+            margin-right: 0;
+            text-align: left;
+        }
+        @include breakpoint($breakpoint_small){
+            width: 100%;
+            margin-right: 0;
+            text-align: left;
+        }
+    }
+    &__title {
+        color: $color_button_text;
+        font-size: 34px;
+        line-height: 1.2;
+        font-weight: 500;
+        position: relative;
+        text-transform: uppercase;
+        z-index: 99;
+        display: inline-block;
+    }
+    &__description {
+        color: $color_button_text;
+        font-size: 16px;
+        margin-bottom: 0;
+        padding: 0;
+        position: relative;
+    }
+}

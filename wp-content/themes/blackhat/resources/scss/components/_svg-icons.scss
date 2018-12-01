@@ -1,0 +1,36 @@
+/**
+* Variables used in this file from abstracts/_variable.scss
+*
+* None
+*
+*/
+/**
+* Specific variables (used only in this file)
+*
+* None
+*
+**/
+
+.svg-icon {
+    display: inline-block;
+    vertical-align: middle;
+
+    @include modifier('full-width') {
+        width: 100%;
+    }
+    @include modifier('large') {
+        width: 72px;
+        height: 72px;
+    }
+
+    @include modifier('medium') {
+        width: 28px;
+        height: 28px;
+    }
+
+    @include modifier('small') {
+        width: 14px;
+        height: 14px;
+    }
+
+}

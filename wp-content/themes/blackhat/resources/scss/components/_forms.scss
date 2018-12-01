@@ -1,0 +1,297 @@
+input,
+select,
+textarea {
+    //-webkit-appearance: none;
+
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+
+}
+
+%form-element {
+    display: block;
+    overflow: visible;
+    width: 100%;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    border: 1px solid $color_gray;
+    /* border-bottom-color: darken($color_gray, 10%);
+    border-bottom-width: 2px; */
+}
+.form-group {
+    margin-bottom: $grid_margin;
+
+    @include breakpoint($breakpoint_laptop){
+    
+    }
+    @include breakpoint($breakpoint_desktop){
+    
+    }
+    @include breakpoint($breakpoint_tablet){
+    
+    }
+    @include breakpoint($breakpoint_mobile){
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    @include breakpoint($breakpoint_small){
+        margin-bottom: 10px;
+        width: 100%;
+    }
+}
+input[type="text"], input[type="email"], input[type="select"] {
+    padding: 10px 15px;
+    border: 0;
+    border-bottom: 1px solid $color_light_gray;
+    width: 100%;
+}
+
+textarea {
+    height: 202px;
+    padding: 10px 15px;
+    border: 0;
+    border-bottom: 1px solid $color_light_gray;
+    width: 100%;
+
+    @include breakpoint(mobile) {
+        height: 130px;
+    }
+
+}
+
+input:focus,
+input:active,
+textarea:focus,
+textarea:active {
+    border-bottom-color: $color_brand;
+    outline: none;
+    transition: $transition;
+}
+
+label {
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: $component_margin/2;
+
+    &[data-error] {
+        display: block;
+        height: 0px;
+    }
+ }
+
+input[type="checkbox"] {
+    display: none;
+}
+input[type="checkbox"] + label {
+    margin-left: 25px;
+}
+input[type="checkbox"] + label:after {
+    opacity: 0;
+    content: '✔';
+    position: absolute;
+    width: 9px;
+    height: 5px;
+    background: transparent;
+    top: 0px;
+    left: 3px;
+    color: $color_gray;
+    cursor: pointer;
+    transform: scale(0);
+}
+input[type="checkbox"]:checked + label:after {
+    opacity: 1;
+    color: $color_dark;
+    transform: scale(1);
+}
+input[type="checkbox"] + label:before {
+    content: '';
+    cursor: pointer;
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    top: 0;
+    left: 0;
+    border: 2px solid $color_gray;
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    display: none;
+}
+input[type="radio"] + label {
+    margin-left: 25px;
+}
+input[type="radio"] + label:after {
+    opacity: 0;
+    content: '';
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    background: $color_light_gray;
+    top: 50%;
+    left: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    transform: scale(1) translate(-50%, -50%);
+    transition: $transition;
+}
+input[type="radio"]:checked + label:after {
+    opacity: 1;
+    width: 10px;
+    height: 10px;
+    background: $color_brand;
+    transform: scale(1) translate(-50%, -50%);
+    transition: $transition;
+}
+input[type="radio"] + label:before {
+    content: '';
+    cursor: pointer;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid $color_gray;
+    cursor: pointer;
+    border-radius: 50%;
+    top: 50%;
+    left: 10px;
+    transform: translate(-50%, -50%);
+}
+
+/* Chrome orange autofill color override */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:active,
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px white inset !important;
+}
+
+.form {
+    margin-bottom: $component_margin;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &__field-icon {
+        position: absolute;
+        right: 0;
+        bottom: 10px;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        background: $color_light_gray;
+        border: 1px solid $color_gray;
+        border-bottom-color: darken($color_gray, 10%);
+        border-bottom-width: 2px;
+
+        &--left {
+            right: auto;
+            left: 0;
+        }
+    }
+
+    &__input {
+        @extend %form-element;
+
+        &::-webkit-file-upload-button {
+            //@extend .button;
+            //@extend .button--primary;
+            position: relative;
+            left: -10px;
+
+        }
+
+        &:disabled {
+            color: rgba($color_light_gray, .3);
+            background: $color_gray;
+            box-shadow: none;
+        }
+
+        &--has-left-icon {
+            padding-left: 40px + $component_margin !important;
+        }
+
+        &--has-right-icon {
+            padding-right: 40px + $component_margin !important;
+        }
+    }
+
+    &__row {
+        @extend .clearfix;
+        position: relative;
+        margin-bottom: $component_margin;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__input-row {
+        position: relative;
+    }
+
+    &__required {
+        color: $color_danger;
+        vertical-align: super;
+        font-size: smaller;
+    }
+
+    &__field-description {
+        vertical-align: super;
+        font-size: smaller;
+    }
+
+    &__column {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: $margin + unquote("%");
+
+        /*
+        &[class^="col-"], &[class*=" col-"] {
+            margin-right: $margin + unquote("%");
+        }
+        */
+    }
+}
+
+
+/* form placeholders */
+form *::-webkit-input-placeholder {
+    color: lighten($color_body_text, 65%);
+    font-size: 14px;
+    line-height: 1.2;
+    font-weight: 400;
+    color: $color_body_text;
+}
+
+form *:-moz-placeholder {
+    color: lighten($color_body_text, 65%);
+    font-size: 14px;
+    line-height: 1.2;
+    font-weight: 400;
+    color: $color_body_text;
+}
+
+form *::-moz-placeholder {
+    color: lighten($color_body_text, 65%);
+    font-size: 14px;
+    line-height: 1.2;
+    font-weight: 400;
+    color: $color_body_text;
+}
+
+form *:-ms-input-placeholder {
+    color: lighten($color_body_text, 65%);
+    font-size: 14px;
+    line-height: 1.2;
+    font-weight: 400;
+    color: $color_body_text;
+}

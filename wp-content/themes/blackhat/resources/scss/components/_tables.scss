@@ -1,0 +1,72 @@
+/**
+* Variables used in this file from abstracts/_variable.scss
+*
+$transition
+$color_gray
+*
+*/
+/**
+* Specific variables (used only in this file)
+*
+* None
+*
+**/
+.blackhat-table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: $component_margin;
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+    overflow-x: auto;
+
+    &:last-child {
+        margin-bottom: 0px;
+    }
+}
+
+.table {
+    width: 100%;
+    max-width: 100%;
+    border-bottom: 1px solid $color_gray;
+    border-left: 1px solid $color_gray;
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+    overflow-x: auto;
+
+    &__head {
+        .table__row {
+            &:hover {
+                background: inherit;
+            }
+        }
+    }
+
+    &__heading {
+        vertical-align: middle;
+        border-top: 1px solid $color_gray;
+        border-bottom: 1px solid $color_gray;
+        border-right: 1px solid $color_gray;
+        text-align: center;
+        padding: 5px 10px;
+    }
+
+    &__row {
+        &:hover {
+            background: $color_light_gray;
+        }
+    }
+
+    &__cell {
+        text-align: left;
+        padding: 5px 10px;
+        border-top: 1px solid $color_gray;
+        border-right: 1px solid $color_gray;
+
+        &:first-child {
+            text-align: left;
+        }
+    }
+
+}

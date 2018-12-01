@@ -1,0 +1,78 @@
+<div class="layout layout--gallery-slider layout--wide layout-padding--large layout-padding--top-none">
+    <div class="wrapper">
+        <div class="container">
+			<div id="blackhat-gallery--slider" class="blackhat-gallery blackhat-gallery--slider js-slick-slider">
+				{% for image in images %}
+					<div class="blackhat-gallery__item">
+						<figure class="blackhat-gallery__image">
+							<a href="{{ image.image_object.sizes.large }}" data-fancybox="gallery" rel="gallery-{{ block_position }}">
+								{{ image.image_html }}
+							</a>
+						</figure>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+    </div>
+</div>
+<script>
+	$( document ).ready( function() {
+        var args = {
+			"blockId": "blackhat-gallery--slider",
+			"options": {
+				"slidesToShow": 3,
+				"slidesToScroll": 1,
+				"autoplay": true,
+				"autoplaySpeed": 3500,
+				"dots": true,
+				"infinite": false,
+				"arrows": true,
+				"responsive": [
+					{
+					"breakpoint": 1025,
+						"settings": {
+							"slidesToShow": 3,
+							"slidesToScroll": 1,
+							"infinite": false,
+							"arrows": false,
+							"dots": true,
+							
+						}
+					},
+					{
+					"breakpoint": 769,
+						"settings": {
+							"slidesToShow": 2,
+							"slidesToScroll": 1,
+							"arrows": false
+						}
+					},
+					{
+					"breakpoint": 600,
+						"settings": {
+							"slidesToShow": 1,
+							"slidesToScroll": 1,
+							"arrows": false
+						}
+					},
+					{
+					"breakpoint": 480,
+						"settings": {
+							"slidesToShow": 1,
+							"slidesToScroll": 1,
+							"arrows": false
+						}
+					}
+				]
+			}
+		};
+
+		blackhat.main.loadScript( 'slick-slider', blackhat.templateDirectory + '/assets/js/slick.min.js', function() {
+			return blackhat.main.slickSlider( args );
+		});
+		blackhat.main.loadScript( 'fancy-box', blackhat.templateDirectory + '/resources/js/jquery.fancybox.min.js', function() {
+			return blackhat.main.fancyBox();
+		});
+	});
+	
+</script>

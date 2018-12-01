@@ -1,0 +1,79 @@
+<section class="layout layout--instagram-feed layout-padding--extra-large" {% if background_image %} style="background-image: url('{{ background_image.url }}');"{% endif %}>
+    <div class="wrapper wrapper--full">
+        <div class="container">
+            {% if instagram_title and instagram_top_title %}
+                <h4 class="global__top-title invisible" data-appear-effect="slideInLeft" data-appear-delay="150">{{ instagram_top_title }}</h4><br>
+                <h3 class="global__title invisible" data-appear-effect="slideInLeft" data-appear-delay="190">{{ instagram_title }}</h3>
+            {% endif %}
+            <div class="instagram-feed">
+                {% if images %}
+                    <div id="instagram-feed__images" class="instagram-feed__images clearfix invisible" data-appear-effect="slideInLeft" data-appear-delay="250">
+                        {% for image in images %}
+                            <div class="instagram-feed__single-image">
+                                <figure class="instagram-feed__figure">
+                                    <img src="{{ image.image_url }}" width="{{ image.width }}" height="{{ image.height }}" alt="{{ image.image_caption }}" class="instagram-feed__image">
+                                    <figcaption class="instagram-feed__figcaption">
+                                        <a href="{{ image.image_permalink }}" target="_blank" class="instagram-feed__icon-permalink">
+                                            <svg class="svg-icon--link-external-dims">
+                                                <use xlink:href="{{ fn('get_template_directory_uri') }}/assets/images/sprite.svg#icon--link-external"></use>
+                                            </svg>
+                                        </a>
+                                    </figcaption>
+                                    
+                                </figure>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+	$( document ).ready( function() {
+        var args = {
+			"blockId": "instagram-feed__images",
+			"options": {
+				"slidesToShow": 4,
+				"slidesToScroll": 1,
+				"autoplay": true,
+				"autoplaySpeed": 5000,
+				"dots": true,
+				"arrows": false,
+                "useCSS": true,
+                "cssEase": 'cubic-bezier(.694, .0482, .335, 1)',
+                "useTransform": true,
+                 "responsive": [
+                    {
+                    "breakpoint": 1024,
+                    "settings": {
+                        "slidesToShow": 3,
+                        "slidesToScroll": 3,
+                        "infinite": true,
+                        "dots": true
+                    }
+                    },
+                    {
+                    "breakpoint": 600,
+                    "settings": {
+                        "slidesToShow": 2,
+                        "slidesToScroll": 2
+                    }
+                    },
+                    {
+                    "breakpoint": 480,
+                    "settings": {
+                        "slidesToShow": 1,
+                        "slidesToScroll": 1
+                    }
+                    }
+                ]
+			}
+		};
+
+		blackhat.main.loadScript( 'slick-slider', blackhat.templateDirectory + '/assets/js/slick.min.js', function() {
+			return blackhat.main.slickSlider( args );
+		});
+	});
+</script>

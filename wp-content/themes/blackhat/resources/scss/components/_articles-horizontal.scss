@@ -1,0 +1,19 @@
+.blackhat-articles{
+    
+    &---horizontal{
+
+        .article__link{
+            display: block;
+        }
+        
+        .article__title{
+            margin-top: 0;
+        }
+
+        .article__text{
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+    }
+}

@@ -1,0 +1,98 @@
+.header {
+
+	&--site {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		padding: 20px 0;
+		color: #000000;
+		background: transparent;//rgba(255,255,255,0.8)
+		z-index: 9999;
+		transition: $transition;
+		transform: translate3d(0,0,0); //This makes it prepared better for slide animation since it's using GPU
+		
+		.wrapper {
+			max-width: 90%;
+			width: 100%;
+
+			@include breakpoint($breakpoint_laptop){
+			
+			}
+			@include breakpoint($breakpoint_desktop){
+				max-width: 100%;
+			}
+			@include breakpoint($breakpoint_tablet){
+				max-width: 100%;
+			}
+			@include breakpoint($breakpoint_mobile){
+			
+			}
+			@include breakpoint($breakpoint_small){
+			
+			}
+		}
+		.container {
+			overflow: hidden;
+			padding: 0;
+
+			@include breakpoint($breakpoint_laptop){
+			
+			}
+			@include breakpoint($breakpoint_desktop){
+				padding: 0 20px;
+			}
+			@include breakpoint($breakpoint_tablet){
+				padding: 0 20px;
+			}
+			@include breakpoint($breakpoint_mobile){
+				padding: 0 20px;
+			}
+			@include breakpoint($breakpoint_small){
+				padding: 0 20px;
+			}
+		}
+	}
+
+	&.sticky {
+		background-color: rgba(0,0,0,0.6);
+		transition: $transition;
+
+		.resp-buttons {
+			//background-color: rgba(0, 0, 0, 0.9);
+			transition: $transition;
+		}
+		.logo {
+			//filter: invert(100%) brightness(0);
+			transition: $transition;
+		}
+	}
+	&--landing {
+		background-color: transparent;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		padding: 0px;
+		color: #000;
+		z-index: 9999;
+
+		.logo {
+			display: none;
+		}
+	}
+
+}
+
+.header__logo {
+	margin: 0;
+	padding: 0;
+	line-height: 1;
+
+	a {
+		img {
+			width: 100%;
+		}
+
+	}
+}

@@ -1,0 +1,24 @@
+<div class="blackhat-testimonials js-slick-slider" data-slick='{
+	"slidesToShow": 1,
+	"slidesToScroll": 1,
+	"speed": 300,
+	"dots": false,
+	"arrows": true
+}'>
+	{% for testimonial in testimonials %} 
+		<article class="blackhat-testimonials__testimonial">
+			<figure class="testimonial__image left">
+				{{ testimonial.image_html }}
+			</figure>
+			<div class="testimonial__description left">
+				<blockquote class="testimonial__blockqoute">
+					{{ testimonial.content }}
+				</blockquote>
+				<div class="testimonial__writer right">
+					<h2 class="testimonial__name">{{ testimonial.name }}</h2>
+					<h3 class="testimonial__title">{{ testimonial.title }}</h3>
+				</div>
+			</div>
+		</article>
+    {% endfor %}
+</div>

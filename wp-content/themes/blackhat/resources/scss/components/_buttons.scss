@@ -1,0 +1,414 @@
+/**
+* Variables used in this file from abstracts/_variable.scss
+*
+$color_primary
+$color_secondary
+$color_featured
+$color_danger
+$color_body_text
+$color_gray
+$text_color_primary
+$text_color_secondary
+$text_color_featured
+$text_color_danger
+$padding_button
+$padding_large_button
+$padding_small_button
+*
+*/
+/**
+* Specific variables (used only in this file)
+*
+* None
+*
+**/
+button,
+.button {
+    background-image: none;
+    background: $color_gray;
+    border-radius: 0px;
+    border: 1px solid transparent;
+    color: $color_body_text;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+    margin-right: 4px;
+    padding: $padding_button;
+    text-align: center;
+    touch-action: manipulation;
+    transition: $transition;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    @include breakpoint($breakpoint_laptop){
+    
+    }
+    @include breakpoint($breakpoint_desktop){
+    
+    }
+    @include breakpoint($breakpoint_tablet){
+    
+    }
+    @include breakpoint($breakpoint_mobile){
+        font-size: 14px;
+    }
+    @include breakpoint($breakpoint_small){
+        font-size: 14px;
+    }
+
+    &:active {
+        box-shadow: none;
+    }
+
+    &:focus {
+        text-decoration: none;
+        color: inherit;
+        outline: none;
+    }
+
+    &:hover {
+        background: lighten($color_gray, 2%);
+        color: $color_body_text;
+        box-shadow: none;
+    }
+
+    &:last-child {
+        margin-right: 0px;
+    }
+}
+
+.button {
+
+    span {
+        display: inline-block;
+        margin-right: 6px;
+
+        &:last-child {
+            margin-right: 0px;
+        }
+    }
+
+    &__icon {
+        margin-right: 6px;
+        width: 16px;
+        height: 16px;
+        vertical-align: text-top;
+
+        &:last-child {
+            margin-right: 0px;
+        }
+    }
+    @include modifier('hero'){
+        background: transparent;
+        border: 2px solid $color_brand;
+        display: inline-block;
+        font-family: inherit;
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 400;
+        letter-spacing: 1px;
+        margin: 0;
+        outline: none;
+        padding: 20px 75px;
+        overflow: hidden;
+        text-transform: uppercase;
+        z-index: 9;
+        transition: $transition;
+
+        @include breakpoint($breakpoint_laptop){
+        
+        }
+        @include breakpoint($breakpoint_desktop){
+        
+        }
+        @include breakpoint($breakpoint_tablet){
+        
+        }
+        @include breakpoint($breakpoint_mobile){
+            padding: 15px 45px;
+        }
+        @include breakpoint($breakpoint_small){
+            padding: 15px 45px;
+        }
+
+        &:before{
+            content: attr(data-hover);
+            position: absolute;
+            top: 50%; 
+            left: 0;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 600;
+            font-size: 18px;
+            opacity: 0;
+            transform: translate(-100%,-50%);
+            transition: $transition;
+
+            @include breakpoint($breakpoint_laptop){
+            
+            }
+            @include breakpoint($breakpoint_desktop){
+            
+            }
+            @include breakpoint($breakpoint_tablet){
+            
+            }
+            @include breakpoint($breakpoint_mobile){
+                font-size: 16px;
+            }
+            @include breakpoint($breakpoint_small){
+                font-size: 16px;
+            }
+        }
+        span{
+            color: $color_button_text;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all .3s ease-in-out;
+
+            @include breakpoint($breakpoint_laptop){
+            
+            }
+            @include breakpoint($breakpoint_desktop){
+            
+            }
+            @include breakpoint($breakpoint_tablet){
+            
+            }
+            @include breakpoint($breakpoint_mobile){
+                font-size: 16px;
+            }
+            @include breakpoint($breakpoint_small){
+                font-size: 16px;
+            }
+        } 
+        &:hover{
+            color: $color_button_text;
+            background-color: transparent;
+            transition: $transition;
+
+            &:before{
+                color: $color_button_text;
+                opacity: 1;
+                transform: translate(0,-50%);
+            }
+            span {
+                opacity: 0; 
+                transform: translate(100%,0)
+            }
+        }
+    }
+    @include modifier('large') {
+        padding: $padding_large_button;
+        font-size: 18px;
+
+        .button__icon {
+            width: 18px;
+            height: 18px;
+        }
+    }
+
+    @include modifier('small') {
+        padding: $padding_small_button;
+        font-size: 9px;
+
+        .button__icon {
+            width: 12px;
+            height: 12px;
+        }
+    }
+    @include modifier('brand') {
+        background-color: $color_brand;
+        padding: $padding_large_button;
+        color: #fff;
+        text-transform: uppercase;
+        display: inline-block;
+        border: 1px solid $color_brand;
+        margin-left: 0px;
+        line-height: 1;
+
+        @include breakpoint($breakpoint_laptop){
+        
+        }
+        @include breakpoint($breakpoint_desktop){
+        
+        }
+        @include breakpoint($breakpoint_tablet){
+        
+        }
+        @include breakpoint($breakpoint_mobile){
+            float: none;
+            display: block;
+            margin-right: 0;
+            margin-left: 0;
+            margin-bottom: 0;
+        }
+        @include breakpoint($breakpoint_small){
+            float: none;
+            display: block;
+            margin-right: 0;
+            margin-left: 0;
+            margin-bottom: 0;
+        }
+
+        &:hover {
+            background-color: $color_body_background;
+            color: $color_brand;
+            border-color: $color_brand;
+        }
+    }
+    @include modifier('transparent-large') {
+        background: transparent;
+        padding: $padding_large_button;
+        color: #fff;
+        text-transform: uppercase;
+        display: inline-block;
+        border: 1px solid #fff;
+        margin-left: 15px;
+        line-height: 1;
+
+        @include breakpoint($breakpoint_laptop){
+        
+        }
+        @include breakpoint($breakpoint_desktop){
+        
+        }
+        @include breakpoint($breakpoint_tablet){
+        
+        }
+        @include breakpoint($breakpoint_mobile){
+            float: none;
+            display: inline-block;
+            margin-right: 0;
+            margin-left: 0;
+            margin-bottom: 0;
+        }
+        @include breakpoint($breakpoint_small){
+            float: none;
+            display: inline-block;
+            margin-right: 0;
+            margin-left: 0;
+            margin-bottom: 0;
+        }
+
+        &:hover {
+            background-color: $color_brand;
+            color: #fff;
+            border-color: $color_brand;
+        }
+    }
+    @include modifier('primary') {
+        background: $color_primary;
+        color: $text_color_primary;
+        fill: $text_color_primary;
+
+        &:hover {
+            background: lighten($color_primary, 5%);
+            color: $text_color_primary;
+            fill: $text_color_primary;
+        }
+
+        &:focus {
+            color: $text_color_primary;
+            fill: $text_color_primary;
+        }
+    }
+
+    @include modifier('secondary') {
+        background: $color_secondary;
+        color: $text_color_secondary;
+        fill: $text_color_secondary;
+
+        &:hover {
+            background: lighten($color_secondary, 5%);
+            color: $text_color_secondary;
+            fill: $text_color_secondary;
+        }
+
+        &:focus {
+            color: $text_color_secondary;
+            fill: $text_color_secondary;
+        }
+    }
+
+    @include modifier('featured') {
+        background: $color_featured;
+        color: $text_color_featured;
+        fill: $text_color_featured;
+
+        &:hover {
+            background: lighten($color_featured, 5%);
+            color: $text_color_featured;
+            fill: $text_color_featured;
+        }
+
+        &:focus {
+            color: $text_color_featured;
+            fill: $text_color_featured;
+        }
+    }
+
+    @include modifier('danger') {
+        background: $color_danger;
+        color: $text_color_danger;
+        fill: $text_color_danger;
+
+        &:hover {
+            background: lighten($color_danger, 10%);
+            color: $text_color_danger;
+            fill: $text_color_danger;
+        }
+
+        &:focus {
+            color: $text_color_danger;
+            fill: $text_color_danger;
+        }
+    }
+
+    @include modifier('transparent') {
+        background: transparent;
+        color: $color_primary;
+        fill: $color_primary;
+        box-shadow: none;
+
+        &:hover {
+            color: lighten($color_primary, 10%);
+            fill: lighten($color_primary, 10%);
+            background: transparent;
+            box-shadow: none;
+        }
+
+        &:active {
+            box-shadow: none;
+        }
+
+        &:focus {
+            background-color: transparent;
+        }
+    }
+
+    @include modifier('full-width') {
+        display: block;
+        width: 100%;
+    }
+}
+
+button:disabled,
+.button--disabled {
+    opacity: 0.7;
+    pointer-events: none;
+    box-shadow: none;
+
+    &:hover {
+        color: inherit;
+        background-color: inherit;
+    }
+}

@@ -1,0 +1,67 @@
+#content-landing {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 98;
+    
+    &:after {
+        content: '';
+        background-color: rgba(0,0,0,0.5);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 99;
+    }
+}
+.main {
+    &--landing {
+        
+
+        &__content {
+            width: 100%;
+            text-align: center;
+            display: block;
+            max-width: 80%;
+            margin: 0 auto;
+            margin-top: calc(100vh - 60vh);
+            text-align: center;
+            z-index: 999;
+
+            @include breakpoint($breakpoint_laptop){
+            
+            }
+            @include breakpoint($breakpoint_desktop){
+            
+            }
+            @include breakpoint($breakpoint_tablet){
+            
+            }
+            @include breakpoint($breakpoint_mobile){
+                max-width: 98%;
+                margin-top: 165px;
+            }
+            @include breakpoint($breakpoint_small){
+                max-width: 98%;
+                margin-top: 165px;
+            }
+
+            img{
+                max-width: none;
+                width: auto;
+                display: inline-block;
+            }
+            figcaption {
+                margin-bottom: 45px;
+            }
+        }
+        &__title {
+            color: #fff;
+            text-align: center;   
+        }
+    }
+}

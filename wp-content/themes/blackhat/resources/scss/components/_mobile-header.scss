@@ -1,0 +1,138 @@
+.mobile-header {
+    @extend .clearfix;
+    background: $color_sidebar_background;
+    
+    @include breakpoint($breakpoint_tablet, 'min-width') {
+        display: none;
+    }
+
+    &__logo {
+        display: inline-block;
+        width: 180px;
+        margin-right: 10px;
+        margin-top: 20px;
+        text-align: left;
+        float: right;
+    }
+
+    &__logo-link {
+        display: block;
+        vertical-align: text-top;
+        text-align: right;
+
+        img {
+            width: 100%;
+        }
+
+        &:hover {
+
+        }
+    }
+
+    &__logo-subtitle {
+        text-align: right;
+        font-size: 12px;
+        line-height: 1;
+        display: block;
+        color: #919191;
+    }
+
+    &__actions {
+        float: left;
+    }
+}
+
+.c-hamburger {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    width: 64px;
+    height: 64px;
+    font-size: 0;
+    text-indent: -9999px;
+    appearance: none;
+    box-shadow: none;
+    border-radius: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+    background: transparent;
+
+    &:hover {
+        background: $color_primary;
+    }
+}
+
+.c-hamburger:focus {
+    outline: none;
+    background: transparent;
+}
+
+.c-hamburger span {
+    display: block;
+    position: absolute;
+    top: 31px;
+    left: 18px;
+    right: 18px;
+    height: 3px;
+    background: white;
+}
+
+.c-hamburger span::before,
+.c-hamburger span::after {
+    position: absolute;
+    display: block;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    content: "";
+}
+
+.c-hamburger span::before {
+    top: -10px;
+}
+
+.c-hamburger span::after {
+    bottom: -10px;
+}
+
+.c-hamburger--htx span::before,
+.c-hamburger--htx span::after {
+    transition-duration: 0.3s, 0.3s;
+    transition-delay: 0.3s, 0s;
+}
+
+.c-hamburger--htx span::before {
+    transition-property: top, transform;
+}
+
+.c-hamburger--htx span::after {
+    transition-property: bottom, transform;
+}
+
+/* active state, i.e. menu open */
+.sidebar-left-open .c-hamburger--htx {
+    background-color: $color_primary;
+}
+
+.sidebar-left-open .c-hamburger--htx span {
+    background: none;
+}
+
+.sidebar-left-open .c-hamburger--htx span::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.sidebar-left-open .c-hamburger--htx span::after {
+    bottom: 0;
+    transform: rotate(-45deg);
+}
+
+.sidebar-left-open .c-hamburger--htx span::before,
+.sidebar-left-open .c-hamburger--htx span::after {
+    transition-delay: 0s, 0.3s;
+}

@@ -1,0 +1,39 @@
+<section id="projects" class="layout layout--wide layout--projects-listing layout-padding--extra-large">
+    <div class="wrapper">
+        <div class="container">
+            <div class="projects-listing__content">
+                {% if post_type_title and post_type_top_title %}
+                    <h4 class="global__top-title invisible" data-appear-effect="slideInLeft" data-appear-delay="150">{{ post_type_top_title }}</h4><br>
+                    <h3 class="global__title invisible" data-appear-effect="slideInLeft" data-appear-delay="190">{{ post_type_title }}</h3>
+                {% endif %}
+                <div class="projects-listing__container">
+                    {% if posts %}
+                        
+                            {% for posts in posts|batch(3) %}
+                                <div class="projects-listing__row {{ cycle(['odd', 'even'], loop.index0) }} clearfix invisible" data-appear-effect="slideInLeft" data-appear-delay="250">
+
+                                    {% for key, post in posts %}
+                                        <div class="single-project__item">
+                                            <a href="{{ post.post_permalink }}">
+                                                <figure class="single-project__item-image" style="background-image: url('{{ post.post_images.0.url }}');">
+                                                    <figcaption class="single-project__item-content">
+                                                        <p class="single-project__item-category">
+                                                            <span class="tag-wrap"><span>WEB APP</span></span>
+                                                        </p>
+                                                        <h5 class="single-project__item-title">
+                                                            {{ post.post_title }}
+                                                        </h5>
+                                                        
+                                                    </figcaption>
+                                                </figure>
+                                            </a>
+                                        </div>
+                                    {% endfor %} 
+                                </div>
+                            {% endfor %}  
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

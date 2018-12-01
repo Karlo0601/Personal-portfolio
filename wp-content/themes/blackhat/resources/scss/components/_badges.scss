@@ -1,0 +1,48 @@
+.badge {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  font-size: 9px;
+  padding: 0px 12px;
+  user-select: none;
+  background: $color_dark;
+  line-height: 16px;
+  color: $color_light_gray;
+  border-radius: 3px;
+
+
+  @include modifier('primary') {
+    background: $color_primary;
+    color: $color_light_gray;
+  }
+  @include modifier('secondary') {
+    background: $color_secondary;
+    color: $color_light_gray;
+
+  }
+  @include modifier('featured') {
+    background: $color-featured;
+    color: $color_light_gray;
+  }
+
+  @include modifier('transparent') {
+    background: transparent;
+    color: $color_primary;
+  }
+
+  @include modifier('danger') {
+    background: $color_danger;
+    color: $color_light_gray;
+  }
+
+  @include modifier('full-width') {
+    width: 100%;
+  }
+
+}

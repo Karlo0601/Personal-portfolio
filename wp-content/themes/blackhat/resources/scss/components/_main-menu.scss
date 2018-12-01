@@ -1,0 +1,360 @@
+.main-navigation {
+   margin-bottom: 45px;
+   display: block;
+}
+.main-nav__container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: column;
+	margin-right: $grid_margin;
+	opacity: 0;
+	padding: 0;
+	transform-origin: top;
+	transform: translate3d(0, 0, 0) scaleY(0);
+	width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    top: 0;
+    transition: $transition;
+}
+.menu {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	& .sub-menu {
+		border-top: 1px solid rgba(255,255,255,.03);
+		background-color: $color_brand;
+		filter: alpha(opacity=0);
+		left: auto;
+		min-width: 220px;
+		opacity: 0;
+		padding: 0;
+		position: absolute;
+		text-align: left;
+		top: 120%;
+		transition: $transition;
+		visibility: hidden;
+		width: auto;
+		z-index: 1030;
+		list-style-type: none;
+
+			@include breakpoint($breakpoint_desktop){
+			
+			}
+			@include breakpoint($breakpoint_tablet){
+			
+			}
+			@include breakpoint($breakpoint_mobile){
+				visibility: visible;
+				opacity: 1;
+				border-top: 0;
+			}
+			@include breakpoint($breakpoint_small){
+				visibility: visible;
+				opacity: 1;
+				border-top: 0;
+			}
+
+		.menu-item{
+			float: left;
+			margin: 0;
+			padding: 20px;
+			width: 100%;
+			position: relative;
+			border-top: 1px solid rgba(255,255,255,.03);
+
+				@include breakpoint($breakpoint_desktop){
+				
+				}
+				@include breakpoint($breakpoint_tablet){
+				
+				}
+				@include breakpoint($breakpoint_mobile){
+					padding: 0 5px;
+				}
+				@include breakpoint($breakpoint_small){
+					padding: 0 5px;
+				}
+			a{
+				font-size: 14px;
+				line-height: 1.4;
+				text-transform: inherit;
+				text-align: left;
+			}
+
+		&:first-child{
+			border-top: 0px solid transparent;
+		}
+		}
+	}
+
+	@include modifier('main-menu') {
+		position: relative;
+		max-width: 360px;
+		width: 100%;
+
+		/* in sake of wordpress css class naming standards -.-  */
+		.menu-item {
+			float: none;
+			margin: 0;
+			display: block;
+			line-height: 1.4;
+			text-align: center;
+			
+			a {
+				text-align: center;
+				display: inline-block;
+				color: #ffffff;
+				font-size: 20px;
+				padding: 15px 25px;
+				position: relative;
+				transition: $transition;
+
+				&:after {
+					content: '';
+					width: 100%;
+					background-color: rgba(255,255,255,0.8);
+					height: 2px;
+					position: absolute;
+					left: 0%;
+					bottom: 0%;
+					transform: scaleX(0);
+					transform-origin: center;
+					transition: $transition;
+				}
+				&:hover {
+					color: $color_brand;
+					transition: $transition;
+
+					&::after {
+						transform: scaleX(1);
+						transform-origin: center;
+						transition: $transition;
+					}
+				}
+			}
+			&:hover{
+				.sub-menu{
+					top: 100%;
+					opacity: 1;
+					visibility: visible;
+
+					li{
+
+						a{
+							color: #ffffff;
+							line-height: 1.4;
+							transition: $transition;
+						}
+						&:hover{
+							a{
+								color: darken(#ffffff, 15%);
+								transition: $transition;
+							}
+						}
+					}
+				}
+			}
+		}
+        
+        @include breakpoint($breakpoint_mobile){
+
+        }
+
+	}
+
+	@include modifier('responsive-menu') {
+		position: relative;
+		width: 100%;
+
+		.sub-menu {
+			position: relative;
+			padding: 0;
+			margin: 0;
+			background: rgba(0, 0, 0, .3);
+		}
+
+		.menu-item {
+			position: relative;
+			display: block;
+			margin: 0;
+			clear: both;
+
+			a {
+				padding: 10px;
+				border-bottom: $responsive_menu_background_hover 1px solid;
+				color: $responsive_menu_color;
+				display: block;
+			}
+
+			.submenu-button {
+				position: absolute;
+				z-index: 9;
+				top: 0;
+				right: 0px;
+				padding: 10px;
+				background: $responsive_menu_background_hover;
+
+				polygon {
+					fill: $responsive_menu_color;
+				}
+			}
+
+		}
+	}
+
+}
+
+/* responsive menu elements */
+.resp-menu {
+	position: fixed;
+	display: none;
+	top: 0%;
+	height: 100vh;
+	padding-bottom: 35%;
+	width: 100%;
+	max-width: 100%;
+	right: 0;
+	left: 0;
+	overflow-y: hidden;
+	background: $responsive_menu_background;
+	z-index: 1002;
+	transition: $transition;
+	transform-origin: top;
+	transform: translate3d(0,0,0) scaleY(0); //This makes it prepared better for slide animation since it's using GPU7
+
+	@include breakpoint($breakpoint_laptop){
+	
+	}
+	@include breakpoint($breakpoint_desktop){
+	
+	}
+	@include breakpoint($breakpoint_tablet){
+	
+	}
+	@include breakpoint($breakpoint_mobile){
+		display: block;
+	}
+	@include breakpoint($breakpoint_small){
+		display: block;
+	}
+
+}
+
+.resp-buttons {
+	background-color: $color_brand;
+	display: inline-block;
+	line-height: 0px;
+	margin: 0px;
+	padding: 15px;
+	position: relative;
+	transition: $transition;
+	z-index: 1002;
+    
+    @include breakpoint($breakpoint_mobile){
+        display: inline-block;
+	}
+}
+.hamburger-menu {
+    margin: 0;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+    order: 2;
+    flex-grow: 0;
+	display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+	justify-content: flex-end;
+	
+	&__bar,
+	&__bar:after,
+	&__bar:before {
+		width: $bar-width;
+		height: $bar-height;
+	}
+
+	&__bar {
+		position: relative;
+		background-color: $color_button_text;
+		transition: all 0ms 0.3s;
+	
+	&.animate {
+		background-color: rgba(171, 147, 121, 0); 
+	}
+	}
+
+	&__bar:before {
+		content: "";
+		position: absolute;
+		left: 0;
+		bottom: $bar-spacing;
+		background-color: $color_button_text;
+		transition: bottom 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+	}
+
+	&__bar:after {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: $bar-spacing;
+		background-color: $color_button_text;
+		transition: top 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+	}
+
+	&__bar.animate:after {
+		top: 0;
+		background-color: $color_button_text;
+		transform: rotate(45deg);
+		transition: top 0.3s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+	}
+
+	&__bar.animate:before {
+		bottom: 0;
+		background-color: $color_button_text;
+		transform: rotate(-45deg);
+		transition: bottom 0.3s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+	}
+}
+
+.menu-open {
+
+	.logo, .header.sticky .logo {
+		z-index: 1002;
+		position: relative;
+		//filter: invert(0%);
+		transition: filter ease-out 0.3s;
+	}
+
+	.main-nav__container {
+		opacity: 1;
+		transform-origin: top;
+		transform: translate3d(0,0,0) scaleY(1);
+		transition: $transition;
+	}
+
+	.hamburger-menu {
+
+		&__bar {
+			background-color: transparent;
+			transition: $transition;
+		}
+		&__bar:after {
+			top: 0;
+			background-color: $color_button_text;
+			transform: rotate(45deg);
+			transition: top 0.3s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+		}
+	
+		&__bar:before {
+			bottom: 0;
+			background-color: $color_button_text;
+			transform: rotate(-45deg);
+			transition: bottom 0.3s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+		}
+	}
+}

@@ -1,0 +1,11 @@
+<div class="layout layout--form layout--narrow layout-padding--large">
+    <div class="wrapper">
+        <div class="container">
+            <div class="form__content">
+                {% if gravity_form_code %}
+                    {{ gravity_form_code | shortcodes }}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

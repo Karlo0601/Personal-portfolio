@@ -1,0 +1,35 @@
+<section id="blog" class="layout layout--wide layout--projects-listing layout-padding--extra-large">
+    <div class="wrapper">
+        <div class="container">
+            <div class="projects-listing__content">
+                {% if post_type_title and post_type_top_title %}
+                    <h4 class="global__top-title invisible" data-appear-effect="slideInLeft" data-appear-delay="150">{{ post_type_top_title }}</h4><br>
+                    <h3 class="global__title invisible" data-appear-effect="slideInLeft" data-appear-delay="190">{{ post_type_title }}</h3>
+                {% endif %}
+                <div class="projects-listing__container">
+                    {% if posts %}
+                        {% for key, post in posts %}
+                            <div class="single-project__item">
+                                <a href="{{ post.post_permalink }}">
+                                    <figure class="single-project__item-image" style="background-image: url('{{ post.post_image }}');">
+                                        <figcaption class="single-project__item-content">
+                                            <p class="single-project__item-category">
+                                                <span class="tag-wrap"><span>WEB APP</span></span>
+                                            </p>
+                                            <h5 class="single-project__item-title">
+                                                {{ post.post_title }}
+                                            </h5>
+                                            
+                                        </figcaption>
+                                    </figure>
+                                </a>
+                            </div>
+                        {% endfor %}
+                    {% elseif no_posts %}
+                        <h3 class="global__no-posts-title">{{ no_posts }}</h3>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

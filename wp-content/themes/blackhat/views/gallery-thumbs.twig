@@ -1,0 +1,11 @@
+<div class="blackhat-gallery blackhat-gallery--thumbnails clearfix">
+	{% for image in images %}
+		<figure class="{{ column_class }} blackhat-gallery__image">
+			<a href="{{ image.image_object.sizes.large }}" rel="gallery-{{ block_position }}">
+				<figure>
+                    {{ image.image_html }}
+                </figure>
+			</a>
+		</figure>
+	{% endfor %}
+</div>

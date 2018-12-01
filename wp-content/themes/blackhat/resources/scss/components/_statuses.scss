@@ -1,0 +1,113 @@
+.status {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    background-image: none;
+    white-space: nowrap;
+    user-select: none;
+    line-height: 16px;
+    border-radius: 3px;
+
+    &:before {
+        content: "";
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin-right: 8px;
+        overflow: hidden;
+        background: $color_dark;
+        vertical-align: middle;
+    }
+
+    @include modifier('primary') {
+        &:before {
+            background: $color_primary;
+        }
+    }
+    @include modifier('secondary') {
+        &:before {
+            background: $color_secondary;
+        }
+    }
+    @include modifier('featured') {
+        &:before {
+            background: $color_featured;
+        }
+    }
+    @include modifier('transparent') {
+        &:before {
+            background: transparent;
+        }
+    }
+
+    @include modifier('danger') {
+        &:before {
+            background: $color_danger;
+        }
+    }
+    @include modifier('new') {
+        &:before {
+            background: #f1e41a;
+        }
+    }
+    @include modifier('in-progress') {
+        &:before {
+            background: #67a6e7;
+        }
+    }
+    @include modifier('done') {
+        &:before {
+            background: #ade358;
+        }
+    }
+    @include modifier('received') {
+        &:before {
+            background: #a15bae;
+        }
+    }
+    @include modifier('at-engravers') {
+        &:before {
+            background: #aeaeae;
+        }
+    }
+    @include modifier('shipping') {
+        &:before {
+            background: #f19d1a;
+        }
+    }
+    @include modifier('completed') {
+        &:before {
+            background: #ade358;
+        }
+    }
+    @include modifier('canceled') {
+        &:before {
+            background: #de3524;
+        }
+    }
+    @include modifier('invoice-pending') {
+        &:before {
+            background: #f19d1a;
+        }
+    }
+    @include modifier('closed') {
+        &:before {
+            background: #aeaeae;
+        }
+    }
+    @include modifier('paid') {
+        &:before {
+            background: #67a6e7;
+        }
+    }
+
+    @include modifier('full-width') {
+        width: 100%;
+    }
+
+}

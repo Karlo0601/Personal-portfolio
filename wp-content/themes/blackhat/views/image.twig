@@ -1,0 +1,6 @@
+<figure class="blackhat-image">
+    <img src="{{ image.url }}" width="{{ image.width }}" height="{{ image.height }}" alt="{{ image.alt }}" />
+    {% if image.caption %}
+    	<figcaption>{{ image.caption }}</figcaption>
+    {% endif %}
+</figure>

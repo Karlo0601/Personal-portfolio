@@ -1,0 +1,101 @@
+.layout--hero-image {
+    background-position: center;
+    height: 90vh;
+    width: 100%;
+}
+.hero-image {
+
+    &__content {
+        left: 50%;
+        max-width: $grid_content;
+        position: absolute;
+        padding: 20px;
+        top: 50%;
+        text-align: left;
+        transform: translate(-50%,-50%);
+        width: 100%;
+        z-index: 11;
+    }
+    &__title {
+        color: $color_button_text;
+        display: block;
+        font-size: 100px;
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: 4px;
+        margin-bottom: 0;
+        margin-bottom: 15px;
+        text-align: left;
+        text-transform: uppercase;
+        width: 100%;
+
+        @include breakpoint($breakpoint_laptop){
+        
+        }
+        @include breakpoint($breakpoint_desktop){
+        
+        }
+        @include breakpoint($breakpoint_tablet){
+        
+        }
+        @include breakpoint($breakpoint_mobile){
+            font-size: 56px;
+        }
+        @include breakpoint($breakpoint_small){
+            font-size: 56px;
+        }
+
+        span {
+            color: $color_brand;
+        }
+    }
+    &__subtitle {
+        color: $color_button_text;
+        display: block;
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 1.4;
+        margin-bottom: 0;
+        margin-bottom: 25px;
+        text-align: left;
+        width: 100%;
+
+        @include breakpoint($breakpoint_laptop){
+            
+        }
+        @include breakpoint($breakpoint_desktop){
+            
+        }
+        @include breakpoint($breakpoint_tablet){
+            
+        }
+        @include breakpoint($breakpoint_mobile){
+            font-size: 18px;
+        }
+        @include breakpoint($breakpoint_small){
+            font-size: 18px;
+        }
+
+        br {
+            @include breakpoint($breakpoint_laptop){
+            
+            }
+            @include breakpoint($breakpoint_desktop){
+            
+            }
+            @include breakpoint($breakpoint_tablet){
+            
+            }
+            @include breakpoint($breakpoint_mobile){
+                display: none;
+            }
+            @include breakpoint($breakpoint_small){
+                display: none;
+            }
+        }
+
+        span {
+            color: $color_brand;
+        }
+    }
+}

@@ -1,0 +1,33 @@
+/**
+*
+* Mixins
+*
+**/
+@mixin breakpoint($breakpoint, $min-max: max-width) {
+    @media(#{$min-max}: #{$breakpoint}px) { @content; }
+}
+
+@mixin range_breakpoint($min_breakpoint, $max_breakpoint) {
+    @media(min-width: #{$min_breakpoint}px)and (max-width: #{$max_breakpoint}px) { @content; }
+}
+
+/*
+ * BEM element/modifier
+ */
+@mixin element($element) {
+	&__#{$element}{
+		@content;
+	}
+}
+
+@mixin modifier($modifier) {
+	&--#{$modifier}{
+		@content;
+	}
+}
+
+@mixin parent($parent) {
+	#{$parent} & {
+		@content;
+	}
+}

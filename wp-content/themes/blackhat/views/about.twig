@@ -1,0 +1,25 @@
+<section id="about" class="layout layout--wide layout--about layout-padding--extra-large">
+    <div class="wrapper">
+        <div class="container">
+            <div class="about__content">
+                {% if about_top_title and about_title %}
+                    <h4 class="global__top-title invisible" data-appear-effect="slideInLeft" data-appear-delay="150">{{ about_top_title }}</h4><br>
+                    <h3 class="global__title invisible" data-appear-effect="slideInLeft" data-appear-delay="190">{{ about_title }}</h3>
+                {% endif %}
+                <div class="about__about-me clearfix">
+                    <figure class="about__image-container invisible" data-appear-effect="slideInLeft" data-appear-delay="250" style="background-image:url('{{ image.url }}');"></figure>
+                    <ul class="about__list col-34 invisible" data-appear-effect="slideInRight" data-appear-delay="250">
+                        <li class="about__list-item"><span class="about__list-item--title">Date of Birth:</span><span class="about__list-item--value">{{ date_of_birth }}</span></li>
+                        <li class="about__list-item"><span class="about__list-item--title">Language:</span><span class="about__list-item--value">{{ language }}</span></li>
+                        <li class="about__list-item"><span class="about__list-item--title">City and Country:</span><span class="about__list-item--value">{{ country_and_city }}</span></li>
+                        <li class="about__list-item"><span class="about__list-item--title">Expert in:</span><span class="about__list-item--value">{{ expert_in }}</span></li>
+                        <li class="about__list-item"><span class="about__list-item--title">Phone:</span><span class="about__list-item--value">{{ phone }}</span></li>
+                        <li class="about__list-item"><span class="about__list-item--title">Email:</span><span class="about__list-item--value"><a href="mailto:{{ email }}" target="_blank">{{ email }}</a></span></li>
+                        <li class="about__list-item"><span class="about__list-item--title">Availability:</span><span class="about__list-item--value"><a href="javascript:void(0)" data-info="{% if available == 'false'  %}{{ not_available_explanation }}{% endif %}" target="_blank">{% if available == 'true' %}Available {% else %}Not Available{% endif %}</a></span></li>
+                    </ul>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

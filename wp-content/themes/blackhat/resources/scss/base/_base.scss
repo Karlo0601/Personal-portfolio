@@ -1,0 +1,238 @@
+/**
+* Variables used in this file from abstracts/_variable.scss
+*
+$font_family
+$font_size
+$font_line_height
+$color_secondary
+$color_body_text
+$color_body_background
+$color_link
+$color_link_hover
+$component_margin
+$transition
+*
+*/
+/**
+* Specific variables (used only in this file)
+*
+* None
+*
+**/
+
+/**
+*
+* Defaults
+*
+**/
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	-webkit-overflow-scrolling: touch;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	font-family: $font_family;
+	font-size: $font_size;
+	line-height: $font_line_height;
+	color: $color_body_text;
+	background: $color_body_background;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: '';
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+a {
+	color: $color_link;
+	text-decoration: none;
+	background-color: transparent;
+
+	&:hover{
+		color: $color_link_hover;
+	}
+}
+
+p,
+ul,
+ol {
+	margin: 0 0 $component_margin 0;
+}
+
+p:last-child,
+ul:last-child,
+ol:last-child {
+	margin-bottom: 0;
+}
+p, li {
+	line-height: 24px;
+}
+a,
+a img,
+button {
+	transition: $transition;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 120%;
+    font-weight: 500;
+	margin: 0px 0px $component_margin 0px;
+	font-family: $font_family_2;
+
+	&:last-child {
+		margin-bottom: 0px;
+	}
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+	color: $color_link;
+}
+
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+h5 a:hover,
+h6 a:hover {
+	color: $color_link_hover;
+}
+
+h1 {
+	font-size: 40px;
+}
+
+h2 {
+	font-size: 32px;
+}
+
+h3 {
+	font-size: 28px;
+}
+
+h4 {
+	font-size: 24px;
+}
+
+h5 {
+	font-size: 20px;
+}
+
+h6 {
+	font-size: 16px;
+}
+
+table {
+	width: 100%;
+	max-width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+td,
+th {
+	padding: 12px;
+}
+
+mark {
+	display: inline-block;
+    background: $color_secondary;
+    color: #ffffff;
+    padding: 0px 4px;
+}
+
+/* Images
+------------------------------------------------------------ */
+figure {
+	position: relative;
+	margin: 0;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center center;
+}
+
+figure img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+figure a:hover img {
+    opacity: .8;
+}
+
+img {
+	max-width: 100%;
+	border: 0;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+}
+
+svg:not(:root) {
+	overflow: hidden;
+}
+
+img.dummy {
+	height: auto;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	width: 100%;
+}
+
+img.real_img {
+	bottom: 0;
+	height: auto;
+	left: 0;
+	margin: auto;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+}
+
+img.wider {
+	height: auto !important;
+	width: 100% !important;
+}
+
+img.taller {
+	width: auto!important;
+	height: 100%!important;
+}

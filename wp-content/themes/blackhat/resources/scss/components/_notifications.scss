@@ -1,0 +1,174 @@
+/**
+* Variables used in this file from abstracts/_variable.scss
+*
+$font_line_height
+$font_size
+$component_margin
+$color_primary
+$color_secondary
+$color_featured
+$color_danger
+$color_gray
+$transition
+$text_color_primary
+$text_color_secondary
+$text_color_featured
+$text_color_danger
+*
+*/
+/**
+* Specific variables (used only in this file)
+*
+* None
+*
+**/
+.notification {
+    display: table;
+    position: relative;
+    width: 100%;
+    margin-bottom: $component_margin;
+    padding: $component_margin;
+    border-radius: 2px;
+    background: $color_gray;
+    transition: $transition;
+    vertical-align: middle;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+    *zoom: 1;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &:before,
+    &:after {
+        display: table;
+        content: '';
+    }
+
+    &:after {
+        clear: both;
+    }
+
+    &__close {
+        float: right;
+        position: relative;
+        top: 0px;
+        right: -10px;
+        font-size: 20px;
+        line-height: $font_line_height*$font_size;
+        text-decoration: none;
+        background: none;
+        border: none;
+        margin: 0px;
+        padding: 0px 4px;
+        box-shadow: none;
+
+        &:hover,
+        &:focus {
+            background: none;
+            border: none;
+            margin: 0px;
+            box-shadow: none;
+        }
+    }
+
+    .button {
+        text-decoration: none;
+    }
+
+    &__icon {
+        margin-right: 6px;
+        width: 16px;
+        height: 16px;
+        vertical-align: text-top;
+
+        &:last-child {
+            margin-right: 0px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 4px;
+    }
+
+    &--success {
+        background: lighten($color_primary, 20%);
+        color: #ffffff;
+        fill: #ffffff;
+
+        p {
+            color: $text_color_primary;   
+        }
+
+        a {
+            text-decoration: underline;
+            color: $text_color_primary;
+        }
+
+        .notification__close {
+            color: $text_color_primary;
+            text-decoration: none;
+        }
+
+        .notification__icon {
+
+        }
+    }
+
+    &--warning {
+        background: lighten($color_featured, 20%);
+        color: #ffffff;
+
+        p {
+            color: $text_color_secondary;   
+        }
+
+        a {
+            text-decoration: underline;
+            color: $text_color_secondary;
+        }
+
+        .notification__close {
+            color: $text_color_secondary;
+            text-decoration: none;
+        }
+    }
+
+    &--error {
+        background: lighten($color_danger, 20%);
+        color: #ffffff;
+
+        p {
+            color: $text_color_danger;   
+        }
+
+        a {
+            text-decoration: underline;
+            color: $text_color_danger;
+        }
+
+        .notification__close {
+            color: $text_color_danger;
+            text-decoration: none;
+        }
+    }
+
+    &--info {
+        background: lighten($color_secondary, 20%);
+        color: #ffffff;
+
+        p {
+            color: $text_color_featured;   
+        }
+
+        a {
+            text-decoration: underline;
+            color: $text_color_featured;
+        }
+
+        .notification__close {
+            color: $text_color_featured;
+            text-decoration: none;
+        }
+    }   
+}

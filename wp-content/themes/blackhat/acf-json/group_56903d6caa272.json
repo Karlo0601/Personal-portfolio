@@ -1,0 +1,87 @@
+{
+    "key": "group_56903d6caa272",
+    "title": "Tracking codes",
+    "fields": [
+        {
+            "key": "field_56903d7adbeb8",
+            "label": "Tracking codes head",
+            "name": "tracking_codes_head",
+            "type": "textarea",
+            "instructions": "Will be placed inside head tag",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_56903e7fdbeba",
+            "label": "Tracking codes body",
+            "name": "tracking_codes_body",
+            "type": "textarea",
+            "instructions": "Will be placed inside body tag",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_56903e6ddbeb9",
+            "label": "Tracking codes footer",
+            "name": "tracking_codes_footer",
+            "type": "textarea",
+            "instructions": "Will be placed under footer tag",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "",
+            "readonly": 0,
+            "disabled": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-tracking-codes"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1460017568
+}

@@ -1,0 +1,47 @@
+{
+    "key": "group_573b3ce39d232",
+    "title": "Map",
+    "fields": [
+        {
+            "key": "field_573b3d1456418",
+            "label": "",
+            "name": "map",
+            "type": "google_map",
+            "instructions": "If map is not showing, please go to Options->Website Settings and enter Google Maps API Key.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "center_lat": "",
+            "center_lng": "",
+            "zoom": "",
+            "height": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            },
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1490105504
+}

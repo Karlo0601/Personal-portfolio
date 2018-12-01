@@ -1,0 +1,57 @@
+.skills {
+    &__content {
+        position: relative;
+        z-index: 9;
+
+        .global__top-title {
+            color: $color_button_text;
+        }
+        .global__title {
+            color: $color_button_text;
+        }
+    }
+    &__container {
+        padding: 0 20px;
+        position: relative;
+        z-index: 9;
+    }
+
+    &__single-item {
+
+        @include breakpoint($breakpoint_laptop){
+        
+        }
+        @include breakpoint($breakpoint_desktop){
+        
+        }
+        @include breakpoint($breakpoint_tablet){
+        
+        }
+        @include breakpoint($breakpoint_mobile){
+            width: 100%;
+            margin: 0 0 15px;
+            float: none;
+            display: block;
+        }
+        @include breakpoint($breakpoint_small){
+            width: 100%;
+            margin: 0 0 15px;
+            float: none;
+            display: block;
+        }
+
+        &--title {
+            color: $color_button_text;
+            font-family: $font_family;
+            text-align: center;
+        }
+        &--counter {
+            color: $color_button_text;
+            font-size: 36px;
+            display: block;
+            margin-bottom: 15px;
+            text-align: center;
+            font-family: $font_family_2;
+        }
+    }
+}

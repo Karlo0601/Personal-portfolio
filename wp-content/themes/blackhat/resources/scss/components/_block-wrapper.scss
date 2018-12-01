@@ -1,0 +1,12 @@
+/*** Flexible Content wrapper ***/
+
+.flexible-block {
+    @extend .clearfix;
+
+    position: relative;
+    //margin-bottom: $component_margin;
+    
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+}

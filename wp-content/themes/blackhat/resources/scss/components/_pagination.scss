@@ -1,0 +1,82 @@
+// Pagination
+
+.pagination {
+    position: relative;
+    padding-left: 0;
+
+    li {
+        display: inline-block;
+        border-radius: 2px;
+        text-align: center;
+        vertical-align: top;
+        height: 30px;
+
+        a {
+            color: $color_dark;
+            display: inline-block;
+            font-size: 1.2rem;
+            padding: 0 10px;
+            line-height: 30px;
+
+            &:hover {
+                background: $color_secondary;
+                color: $color_light_gray;
+            }
+        }
+
+        &.active a {
+            color: #fff;
+
+            &:hover {
+                background: $color_secondary;
+            }
+        }
+
+        &.active { background-color: $color_primary; }
+
+        &.disabled a {
+            cursor: default;
+            color: #999;
+        }
+
+        i {
+            font-size: 2rem;
+        }
+    }
+
+
+    li.pages ul li {
+        display: inline-block;
+        float: none;
+    }
+
+    &__arrow {
+
+        &.disabled {
+            pointer-events: none;
+            opacity: .5;
+        }
+
+        svg {
+            width: 30px;
+            height: 30px;
+            fill: $color_primary;
+        }
+
+        &:hover {
+            a {
+                background: none !important;
+
+                svg {
+                    fill: $color_secondary;
+                }
+            }
+        }
+
+        &--next {
+            position: absolute;
+            right: 0;
+        }
+
+    }
+}

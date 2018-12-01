@@ -1,0 +1,106 @@
+/**
+*
+* Variables
+*
+**/
+/** Grid **/
+// static/sass/layout/_blackhat_grid.scss
+$grid_content: 1170px; //wrapper
+$grid_content_narrow: $grid_content*0.8;
+$grid_margin: 30px;
+$grid_margin-large: 60px;
+$grid_padding: 15px;
+
+/* refractor this vars */
+$color_brand: #1fc69d;
+$color_button_text: #fff;
+$color_button_background: $color_brand;
+$color_button_text: #fff;
+$color_button_background_hover: darken($color_brand,10%);
+$color_button_text_hover: #fff;
+// header
+$color_header_background: $color_brand;
+$color_header_text: #fff;
+// responive navigation
+$responsive_menu_open_speed: .3s;
+$responsive_menu_width: 280px;
+$responsive_menu_background: rgba(51,51,51,0.7);
+$responsive_menu_background_hover: darken($responsive_menu_background,10%);
+$responsive_menu_color: #ffffff;
+$responsive_menu_color_hover: #ffffff;
+
+$component_margin: 28px;
+
+$header_height: 60px;
+$footer_height: 80px;
+
+/** Typography **/
+// static/sass/base/_font.scss
+//$font_family: Arial, Helvetica, sans-serif;
+$font_family: 'Raleway', sans-serif;
+$font_family_2: 'Oswald', sans-serif;
+$font_size: 16px;
+$font_line_height: 20/14;
+
+/** Buttons **/
+$padding_button: 10px 13px;
+$padding_large_button: 15px 35px;
+$padding_small_button: 6px 8px;
+
+/**
+*
+* Colors
+*
+**/
+
+/** General **/
+/** Body **/
+$color_body_background: #ffffff;
+$color_body_text: #151515;
+$color_section_text: #333333;
+
+$color_primary: #333333;
+$color_secondary: #996AFF;
+$color_featured: #CC7D2C;
+$color_danger: #B2153D;
+
+$text_color_primary: #ffffff;
+$text_color_secondary: #ffffff;
+$text_color_featured: #ffffff;
+$text_color_danger: #ffffff;
+
+$color_light_gray: #e2e2e2;
+$color_gray: #7b7b7b;
+$color_dark: #333333;
+
+/** Links **/
+$color_link: #1fc69d;
+$color_link_hover: lighten($color_link, 10);
+
+/** Sidebar **/
+$color_sidebar_background: #2a2a2a;
+$sidebar_width: 250px;
+
+
+/** Hamburger Icon **/
+$bar-width: 30px;
+$bar-height: 2px;
+$bar-spacing: 8px;
+
+/**
+*
+* Transitions
+*
+**/
+$transition: all ease 0.5s;
+
+/**
+*
+* Breakpoints
+*
+**/
+$breakpoint_small : 440;
+$breakpoint_mobile : 640;
+$breakpoint_tablet : 768;
+$breakpoint_desktop : 1024;
+$breakpoint_laptop : 1366;

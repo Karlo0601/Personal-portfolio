@@ -1,0 +1,66 @@
+.layout--form {
+    max-width: 960px;
+    margin: 0 auto;
+    display: block;
+}
+
+.form__content {
+    .gform_fields {
+        padding: 0;
+    }
+    body .gform_wrapper ul li.field_description_below div.ginput_container_checkbox, body .gform_wrapper ul li.field_description_below div.ginput_container_radio {
+        margin-top: 0px;
+        margin-bottom: 0;
+    }
+    .gform_wrapper ul li.gfield {
+        margin-top: 25px;
+        padding-top: 0;
+    }
+    .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), .gform_wrapper textarea {
+        border: 1px solid #efefef;
+        padding: 10px 10px;
+        font-weight: 300;
+        
+        &:focus {
+            outline: 0;
+        }
+    }
+    .gform_wrapper label.gfield_label {
+        color: #333;
+        font-weight: 300;
+        margin-bottom: 10px;
+    }
+    .top_label div.ginput_container {
+        margin-top: 0px;
+    }
+    .gform_wrapper .field_sublabel_below .ginput_complex.ginput_container label, .gform_wrapper .field_sublabel_below div[class*=gfield_time_].ginput_container label {
+        color: #333;
+    }
+    .gform_wrapper .gfield_radio li label {
+        padding-left: 25px;
+        font-size: 16px;
+        font-weight: 300;
+        max-width: 100%;
+    }
+    .gform_wrapper ul.gfield_checkbox li input[type=checkbox], .gform_wrapper ul.gfield_radio li input[type=radio] {
+        display: none;
+    }
+    .gform_button {
+        text-transform: uppercase;
+        border-radius: 0;
+        background: $color_brand;
+        color: #fff;
+        box-shadow: none;
+        padding: 15px 55px;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1;
+        border: 2px solid $color_brand;
+
+        &:hover {
+            background-color: #fff;
+            color: $color_brand;
+            border: 2px solid $color_brand;
+        }
+    }
+}

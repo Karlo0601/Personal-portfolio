@@ -1,0 +1,18 @@
+<section id="cta" class="layout layout--wide layout--cta layout-padding--large" data-parallax="scroll" {% if cta_background_image %}data-image-src="{{ cta_background_image.url }}"{% endif %}>
+    {% if cta_background_image %}<div class="global__overlay"></div>{% endif %}
+    <div class="wrapper">
+        <div class="container">
+            <div class="cta__content">
+                {% if cta_title and cta_button_link %}
+                    <div class="cta__left-half col-23 invisible" data-appear-effect="slideInLeft" data-appear-delay="190">
+                        <h3 class="cta__title">{{ cta_title }}</h3>
+                        <p class="cta__description">{{ cta_description }}</p>
+                    </div>
+                    <div class="cta__right-half col-13 col-last invisible" data-appear-effect="slideInRight" data-appear-delay="200">
+                        <a href="{{ cta_button_link }}" class="button button--transparent-large">{{ cta_button_label }}</a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>

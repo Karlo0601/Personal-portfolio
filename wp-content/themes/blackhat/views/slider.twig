@@ -1,0 +1,45 @@
+<div id="blackhat-slider-{{ block_position }}" class="blackhat-slider">   
+	{% for slide in slider %}
+		<div class="blackhat-slider__item">
+			<figure>
+
+				{% if slide.slide_caption %}
+					<figcaption class="blackhat-slider__content">
+						{{ slide.slide_caption }}
+					</figcaption>
+				{% endif %}
+
+				{% if slide.slide_link %}
+					<a href="{{ slide.slide_link }}">
+				{% endif %}
+
+				{{ slide.image_html }}
+
+				{% if slide.slide_link %}
+					</a>
+				{% endif %}
+
+			</figure>
+		</div>
+	{% endfor %}
+</div>
+
+<script>
+	$( document ).ready( function() {
+        var args = {
+			"blockId": "blackhat-slider-{{ block_position }}",
+			"options": {
+				"slidesToShow": 1,
+				"slidesToScroll": 1,
+				"autoplay": true,
+				"autoplaySpeed": {{ slide_duration }},
+				"dots": {{ slider_show_bullets }},
+				"arrows": {{ slider_show_prev_and_next_arrows }}
+			}
+		};
+
+		blackhat.main.loadScript( 'slick-slider', blackhat.templateDirectory + '/assets/js/slick.min.js', function() {
+			return blackhat.main.slickSlider( args );
+		});
+	});
+</script>

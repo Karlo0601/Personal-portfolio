@@ -1,6 +1,6 @@
-
 !wp-content/themes/blackhat/
 .htaccess
+.vscode/
 *.log
 /index.php
 /license.txt
@@ -23,10 +23,11 @@ wp-content/blogs.dir/
 wp-content/cache/
 wp-content/cache/*
 wp-content/index.php
+wp-content/plugins/
 wp-content/plugins/hello.php
-wp-content/themes/*
 wp-content/upgrade/
 wp-content/uploads/
+wp-content/wflogs/
 wp-content/wp-cache-config.php
 wp-cron.php
 wp-includes/

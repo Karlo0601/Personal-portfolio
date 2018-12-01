@@ -1,0 +1,57 @@
+.social {
+	padding: 0px;
+
+	&__item {
+		list-style-type: none;
+		float: left;
+		margin: 0px 4px;
+		transform: scale(1);
+		transition: $transition;
+
+		&:hover {
+		transform: scale(1.08);
+		transition: $transition;
+
+		.social__icon {
+			
+			svg {
+				fill: $color_brand;
+				transition: $transition;
+
+				use {
+					fill: $color_brand;
+					transition: $transition;
+				}
+			}
+		}
+	}
+	}
+
+	a {
+		display: block;
+		padding: 10px;
+		background: #fff;
+		color: #333;
+
+		
+	}
+
+	&__icon {
+
+		svg {
+			display: inline-block;
+			fill: $color_body_text;
+			width: 24px;
+			height: 24px;
+			vertical-align: middle;
+			transition: $transition;
+
+			use {
+				fill: $color_body_text;
+				transition: $transition;
+			}
+
+			
+		}
+	}
+}

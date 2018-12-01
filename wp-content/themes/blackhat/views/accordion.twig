@@ -1,0 +1,24 @@
+<div id="blackhat-accordion-{{ block_position }}" class="blackhat-accordion">
+    {% for key,element in accordion %}
+        <div class="blackhat-accordion__panel">
+            <h3 class="blackhat-accordion__panel-title">
+                {{ element.title }}
+                <svg class="svg-arrow--down blackhat-accordion__toggle-icon">
+                    <use xlink:href="{{ function('get_stylesheet_directory_uri') }}/assets/images/sprite.svg#arrow--down"></use>
+                </svg>
+            </h3>
+            <div class="blackhat-accordion__panel-content">
+                {{ element.content }}
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+<script>
+    $( document ).ready( function() {
+        var args = {
+            "blockId": "blackhat-accordion-{{ block_position }}"
+        };   
+        blackhat.main.accordion( args );
+    });
+</script>

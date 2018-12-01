@@ -1,0 +1,204 @@
+/**
+*
+* BlackHat Grid Maker
+*
+**/
+@function decimal-round ($number, $digits: 0, $mode: round) {
+    $n: 1;
+    // $number must be a number
+    @if type-of($number) != number {
+        @warn '#{ $number } is not a number.';
+        @return $number;
+    }
+    // $digits must be a unitless number
+    @if type-of($digits) != number {
+        @warn '#{ $digits } is not a number.';
+        @return $number;
+    } @else if not unitless($digits) {
+        @warn '#{ $digits } has a unit.';
+        @return $number;
+    }
+    @for $i from 1 through $digits {
+        $n: $n * 10;
+    }
+    @if $mode == round {
+        @return round($number * $n) / $n;
+    } @else if $mode == ceil {
+        @return ceil($number * $n) / $n;
+    } @else if $mode == floor {
+        @return floor($number * $n) / $n;
+    } @else {
+        @warn '#{ $mode } is undefined keyword.';
+        @return $number;
+    }
+}
+
+@function decimal-ceil ($number, $digits: 0) {
+    @return decimal-round($number, $digits, ceil);
+}
+
+@function decimal-floor ($number, $digits: 0) {
+    @return decimal-round($number, $digits, floor);
+}
+
+$user_width: $grid_content;
+$user_margin: $grid_margin;
+$user_padding: $grid_padding;
+
+$outer_width: $user_width + $user_padding * 2;
+$inner_width: $user_width / $outer_width * 100;
+$margin: decimal-round(($user_margin / $user_width)*100,6);
+$padding: decimal-floor($user_padding / $outer_width,6);
+
+
+$final_12: decimal-floor(((100-(1*$margin))/2),6);
+$final_13: decimal-floor(((100-(2*$margin))/3),6);
+$final_14: decimal-floor(((100-(3*$margin))/4),6);
+$final_23: decimal-floor(((100-(1*$margin) - $final_13)),6);
+$final_15: decimal-floor(((100-(4*$margin))/5),6);
+$final_16: decimal-floor(((100-(5*$margin))/6),6);
+$final_45: decimal-floor(100 - $final_15 - $margin,6);
+$final_25: decimal-floor((2 * $final_15) + $margin,6);
+$final_35: decimal-floor((3 * $final_15) + (2 * $margin),6);
+$final_34: decimal-floor(((100 - $margin - $final_14)),6);
+$margin_12: (($user_margin / (($final_12 / 100) * $user_width)) * 100);
+$final_12_12: decimal-floor(((100 - (1 * $margin_12)) / 2),6);
+$final_12_13: decimal-floor(((100 - (2 * $margin_12)) / 3),6);
+$margin_13: (($user_margin / (($final_13/100) * $user_width)) * 100);
+$final_13_13: decimal-floor(((100 - (1 * $margin_13)) / 2),6);
+$margin_34: (($user_margin / (($final_34/100) * $user_width)) * 100);
+$final_34_12: decimal-floor(((100 - (1 * $margin_34)) / 2),6);
+$margin_14: (($user_margin / (($final_14 / 100) * $user_width)) * 100);
+$final_14_12: decimal-floor(((100 - (1 * $margin_14)) / 2),6);
+
+.container {
+    @extend .clearfix;
+    width: 100%; 
+    padding: 0 20px;
+    overflow: hidden;
+
+    @include breakpoint($breakpoint_laptop){
+    
+    }
+    @include breakpoint($breakpoint_desktop){
+    
+    }
+    @include breakpoint($breakpoint_tablet){
+    
+    }
+    @include breakpoint($breakpoint_mobile){
+        padding: 0 20px;
+    }
+    @include breakpoint($breakpoint_small){
+        padding: 0 20px;
+    }
+}
+
+.col-1 { 
+    width: 100%; 
+}
+
+.col-12 { 
+    width: $final_12 + unquote("%"); 
+    margin-right: $margin + unquote("%"); 
+}
+
+.col-13 { 
+    width: $final_13 + unquote("%"); 
+    margin-right: $margin + unquote("%"); 
+}
+
+.col-14 { 
+    width: $final_14 + unquote("%"); 
+    margin-right: $margin + unquote("%"); 
+}
+
+.col-15 { 
+    width: $final_15 + unquote("%"); 
+    margin-right: $margin + unquote("%"); 
+}
+
+.col-16 { 
+    width: $final_16 + unquote("%"); 
+    margin-right: $margin + unquote("%"); 
+}
+
+.col-23 { 
+    width: $final_23 + unquote("%"); 
+    margin-right: $margin + unquote("%"); 
+}
+
+.col-25 { 
+    width: $final_25 + unquote("%"); 
+    margin-right: $margin + unquote("%"); 
+}
+
+.col-34 { 
+    width: $final_34 + unquote("%"); 
+    margin-right: $margin + unquote("%"); 
+}
+
+.col-35 { 
+    width: $final_35 + unquote("%"); 
+    margin-right: $margin + unquote("%"); 
+}
+
+.col-45 { 
+    width: $final_45 + unquote("%"); 
+    margin-right: $margin + unquote("%"); 
+}
+
+.col-12:nth-of-type(2n) { 
+    margin-right: 0px;
+}
+
+.col-13:nth-of-type(3n) { 
+    margin-right: 0px; 
+}
+
+.col-14:nth-of-type(4n) { 
+    margin-right: 0px; 
+}
+
+.col-15:nth-of-type(5n) { 
+    margin-right: 0px; 
+}
+
+.col-16:nth-of-type(6n) { 
+    margin-right: 0px; 
+}
+
+.col-12 .col-12:nth-of-type(2n) { 
+    margin-right: 0px; 
+}
+
+.col-12 .col-13:nth-of-type(3n) { 
+    margin-right: 0px; 
+}
+
+.col-14 .col-12:nth-of-type(2n) { 
+    margin-right: 0px; 
+}
+
+.col-34 .col-12:nth-of-type(2n) { 
+    margin-right: 0px; 
+}
+
+.col-1,
+.col-12,
+.col-13,
+.col-14,
+.col-15,
+.col-16,
+.col-23,
+.col-25,
+.col-34,
+.col-35,
+.col-45,
+.col-56 {
+    float: left;
+}
+
+.col-last {
+    margin-right: 0;
+}

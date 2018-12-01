@@ -1,0 +1,29 @@
+<div id="blackhat-tabs-{{ block_position }}" class="blackhat-tabs">
+    <ul class="blackhat-tabs__titles">
+
+        {% for key,tab in tabs %}
+            <li class="blackhat-tabs__title">
+                <a href="#tab-{{ block_position }}-{{ key }}" class="blackhat-tabs__link">{{ tab.title }}</a>
+            </li>
+        {% endfor %}
+
+    </ul>
+    <div class="blackhat-tabs__panels">
+
+        {% for key,tab in tabs %}
+            <div class="blackhat-tabs__panel">
+                {{ tab.content }}
+            </div>
+        {% endfor %}
+
+    </div>
+</div>
+
+<script>
+	$( document ).ready( function() {
+        var args = {
+			"blockId": {{ block_position }}
+		};
+		blackhat.main.tabs( args );
+	});
+</script>

@@ -1,0 +1,68 @@
+/**
+* Variables used in this file from abstracts/_variable.scss
+*
+$color_primary
+$text_color_primary
+$transition
+*
+*/
+/**
+* Specific variables (used only in this file)
+*
+* None
+*
+**/
+.blackhat-accordion {
+	width: 100%;
+
+	&:last-child {
+		margin-bottom: 0px;
+	}
+
+	&__panel {
+		clear: both;
+	}
+
+	&__panel-title {
+		padding: 10px;
+		font-size: 14px;
+		font-weight: bold;
+		cursor: pointer;
+		margin: 0;
+		color: $text_color_primary;
+		fill: $text_color_primary;
+		background: $color_primary;
+		border-bottom: 1px solid darken( $color_primary, 10% );
+		transition: $transition;
+
+		&:hover {
+			background: darken( $color_primary, 10% );
+		}
+	}
+
+	&__toggle-icon {
+		top: 4px;
+		float: right;
+		width: 16px;
+		height: 16px;
+		transition: $transition;
+	}
+
+	&__panel-content {
+		display: none;
+		padding: 10px;
+		border: 1px solid transparent;
+		border-radius: 0 0 3px 3px;
+	}
+
+	&__panel--current {
+		.blackhat-accordion__panel-title {
+			background: darken( $color_primary, 10% );
+		}
+
+		.blackhat-accordion__toggle-icon {
+			top: 0;
+			transform: rotate(-180deg);
+		}
+	}
+}

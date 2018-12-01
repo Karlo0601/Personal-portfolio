@@ -1,0 +1,16 @@
+<div id="blackhat-map-{{ block_position }}" class="blackhat-map"></div>
+
+<script>
+	$( document ).ready( function() {
+        var args = {
+			"blockId": "blackhat-map-{{ block_position }}",
+            "lat": {{ map.lat }},
+            "lng": {{ map.lng }},
+            "address": "{{ map.address }}"
+		};
+
+		blackhat.main.loadScript( 'google-map', 'https://maps.googleapis.com/maps/api/js?key={{ map.api_key }}', function() {
+			return blackhat.main.googleMap( args );
+		});
+	});
+</script>
